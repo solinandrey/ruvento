@@ -9,7 +9,7 @@ import Header from "@src/components/Header";
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
-  const { global } = pageProps;
+  // const { global } = pageProps;
 
   return (
     <>
@@ -21,7 +21,8 @@ const MyApp = ({ Component, pageProps }: any) => {
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
         <Header />
-        <Component {...pageProps} />
+        {/* <Component {...pageProps} /> */}
+        <Component />
       {/* </GlobalContext.Provider> */}
     </>
   );

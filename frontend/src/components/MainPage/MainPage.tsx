@@ -1,5 +1,11 @@
+import TitleBlock from "@components/TitleBlock";
+
 const MainPage = () => {
-  return <div className="main-page">Main Page</div>
-}
+  return (
+    <div className="main-page">
+      <TitleBlock />
+    </div>
+  );
+};
 
 export default MainPage;

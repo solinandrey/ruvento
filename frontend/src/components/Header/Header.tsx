@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.scss";
-import logo from "@src/assets/images/logotype.svg";
+import Logo from "@src/assets/images/logotype.svg";
 
 const headerLinks = [
   {
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <Image src={logo} alt="Ruvento"/>
+        <Logo />
       </Link>
       <div className={styles.links}>
         {headerLinks.map((link, idx) => {
