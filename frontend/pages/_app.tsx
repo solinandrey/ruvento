@@ -1,10 +1,10 @@
 import App from "next/app";
 import Head from "next/head";
-// import "../assets/css/style.css";
+import "../styles/global.scss";
 import { createContext } from "react";
 import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
-
+import Header from "@src/components/Header";
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
@@ -20,6 +20,7 @@ const MyApp = ({ Component, pageProps }: any) => {
         />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
+        <Header />
         <Component {...pageProps} />
       </GlobalContext.Provider>
     </>

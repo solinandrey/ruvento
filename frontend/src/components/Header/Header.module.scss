@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+  padding-top: 2.64rem;
+}
+
+.logo {
+  width: 12.15rem;
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.links {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.linkItem {
+  position: relative;
+  font-size: 2.43rem;
+  font-family: $circe;
+  text-decoration: none;
+  color: $black;
+  line-height: 1.49;
+  display: block;
+  overflow: hidden;
+  &:not(:first-of-type) {
+    margin-left: 6.53rem;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: $black;
+    transform: translateX(-100%);
+    transition: transform .2s ease-in-out;
+  }
+
+
+  &:hover {
+    &:after {
+      height: 2px;
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+}

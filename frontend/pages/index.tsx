@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 // import styles from '@components/styles/Home.module.css'
 import { fetchAPI } from '../lib/api';
 import MainPage from '@components/MainPage';
+import Header from '@src/components/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,7 @@ export default function Home({articles}: any) {
       </Head>
       <main>
         <MainPage />
-        {articles.map((item:any) => <div>{item.attributes.title}</div>)}
+        {/* {articles.map((item:any) => <div>{item.attributes.title}</div>)} */}
       </main>
     </>
   )
