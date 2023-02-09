@@ -1,0 +1,53 @@
+.portfolioBlock {
+  margin-top: 9.1rem;
+}
+
+.container {
+}
+
+.title {
+  color: $grey;
+  font-family: $circeBold;
+  font-size: 9rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.logos {
+}
+
+.logoRow {
+  display: flex;
+  
+}
+
+.runnigRow {
+  display: flex;
+  animation: run 60s linear -1s infinite;
+}
+
+.logoItem {
+  height: 4.5rem;
+  margin-left: 4.45rem;
+
+  & img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.up {
+}
+.down {
+  margin-top: 2rem;
+  & .runnigRow {
+    animation-direction: reverse;
+  }
+}
+
+
+@keyframes run {
+  from {transform: translate3d(0,0,0);}
+  to {transform: translate3d(-100%,0,0);}
+}
