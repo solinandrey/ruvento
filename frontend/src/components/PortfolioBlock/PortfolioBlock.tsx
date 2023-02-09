@@ -43,7 +43,7 @@ const PortfolioBlock = () => {
         <div className={styles.title}>featured portfolio</div>
         <div className={styles.logos}>
           {["up", "down"].map((part) => (
-            <div className={`${styles.logoRow} ${styles[part]}`}>
+            <div className={`${styles.logoRow} ${styles[part]}`} key={part}>
               {[1, 2].map((_, i) => (
                 <div className={styles.runnigRow} key={`dup${part}${i}`}>
                   {getCompaniesRow(companies, part as "up" | "down").map(
