@@ -26,14 +26,14 @@ export default function Home({articles}: any) {
 
 export async function getStaticProps() {
   console.log('i am on the server');
-  const articles =  await fetchAPI('/articles')
+  // const articles =  await fetchAPI('/articles')
 
   
 
 
   return {
     props: {
-      articles: articles.data
+      // articles: articles.data
     }
   }
 }
