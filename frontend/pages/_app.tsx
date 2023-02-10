@@ -5,6 +5,7 @@ import { createContext } from "react";
 // import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import Header from "@src/components/Header";
+import Footer from "@src/components/Footer";
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
@@ -24,6 +25,7 @@ const MyApp = ({ Component, pageProps }: any) => {
         {/* <Component {...pageProps} /> */}
         <Component />
       {/* </GlobalContext.Provider> */}
+      <Footer />
     </>
   );
 };

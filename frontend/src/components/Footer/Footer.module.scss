@@ -1,0 +1,85 @@
+.footer {
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+  margin-top: 10.63rem;
+  margin-bottom: 10.2rem;
+}
+
+.title {
+  font-family: $circeBold;
+  font-size: 3.47rem;
+  color: $black;
+  width: 58.3rem;
+  text-transform: uppercase;
+  & span {
+    display: inline-block;
+    color: $white;
+    font-size: 2.43rem;
+    padding: 0.9rem 4.65rem 0.4rem;
+    transform: translateY(-0.4rem);
+    background: $orange;
+    border-radius: 1.39rem;
+    text-transform: uppercase;
+    transform-origin: center;
+    transition: padding 0.4s $transitionFunc;
+    cursor: pointer;
+    &:hover {
+      padding: 0.9rem 5.65rem 0.4rem;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  margin-top: 5.35rem;
+  justify-content: space-between;
+}
+
+.footerNav {
+  display: flex;
+}
+
+.footerNavItem {
+  color: $orange;
+  font-size: 2.43rem;
+  font-family: $circe;
+  transition: color 0.2s $transitionFunc;
+  &:not(:first-of-type) {
+    margin-left: 2.7rem;
+  }
+  &:hover {
+    color: $black;
+  }
+}
+
+.socialLinks {
+  display: flex;
+}
+
+.socialLinksItem{
+  width: 3.4rem;
+  height: auto;
+  &:not(:first-of-type) {
+    margin-left: 0.9rem;
+  }
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.6rem;
+}
+
+.bottomText {
+  font-family: $circe;
+  color: $black;
+  font-size: 2.43rem;
+  width: 66rem;
+}
+
+.bottomLogo {
+  width: 9.93rem;
+  height: auto;
+}
+
