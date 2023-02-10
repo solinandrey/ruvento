@@ -10,7 +10,7 @@
 .top {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .topTitle {
@@ -25,7 +25,7 @@
   &:after {
     position: absolute;
     content: '';
-    right: 0;
+    right: -5rem;
     top: 0;
     height: 100%;
     width: .2rem;
@@ -44,5 +44,5 @@
 .cards {
   display: flex;
   justify-content: space-between;
-  margin-top: 13.9rem;
+  margin-top: 4.16rem;
 }
