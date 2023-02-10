@@ -1,0 +1,48 @@
+.operateBlock {
+  margin-top: 7.85rem;
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+}
+
+.content {
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topTitle {
+  position: relative;
+  color: $black;
+  font-family: $circeBold;
+  font-size: 8.68rem;
+  width: 50%;
+  text-transform: uppercase;
+  line-height: 1;
+
+  &:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: .2rem;
+    background: $orange;
+  }
+}
+
+.topDesc {
+  width: 50%;
+  font-size: 2.43rem;
+  font-family: $circe;
+  max-width: 31.25rem;
+  padding-left: 4rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13.9rem;
+}

@@ -1,0 +1,33 @@
+.card {
+  width: 24rem;
+}
+
+.image {
+  width: 100%;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.title {
+  font-family: $circeExtraBold;
+  font-size: 2.43rem;
+  text-transform: uppercase;
+}
+
+.topTitle {
+  color: $black;
+}
+
+.bottomTitle {
+  color: $orange;
+  margin-top: 4.5rem;
+}
+
+.desc {
+  font-family: $circe;
+  font-size: 2.43rem;
+  color: $black;
+  margin-top: .7rem;
+}
