@@ -1,0 +1,47 @@
+.latestNews {
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+  margin-top: 7.9rem;
+}
+
+.title {
+  font-family: $circeBold;
+  font-size: 8.68rem;
+  color: $black;
+  text-transform: uppercase;
+}
+
+.news {
+  margin-top: 1.25rem;
+}
+
+.newsItem {
+  display: flex;
+  justify-content: space-between;
+  &:not(:first-of-type) {
+    margin-top: 6.53rem;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: -3.25rem;
+      left: 0;
+      width: 57rem;
+      height: 0.2rem;
+      background: $orange;
+    }
+  }
+}
+
+.newsText {
+  width: 57.8rem;
+  font-family: $circe;
+  color: $black;
+  font-size: 2.43rem;
+}
+
+.newsImage {
+  width: 16.53rem;
+  height: 12.5rem;
+}
