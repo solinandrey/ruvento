@@ -1,0 +1,48 @@
+.blog {
+  padding: 0 $layoutPadding;
+  margin-top: 9.24rem;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5.5rem;
+}
+
+.articleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.articleText {
+  width: 50.07rem;
+}
+
+.articleTitle {
+  font-family: $circeExtraBold;
+  font-size: 4.51rem;
+  color: $orange;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.articleImage {
+  width: 29.86rem;
+  height: 29.86rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.articleDesc {
+  font-family: $circe;
+  color: $black;
+  margin-top: 3.23rem;
+  font-size: 2.43rem;
+}
