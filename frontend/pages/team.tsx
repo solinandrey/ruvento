@@ -1,10 +1,11 @@
 import TeamPage from "@components/TeamPage";
+import Layout from "@src/components/Layout";
 
 const Team = () => {
   return (
-    <div className="team">
+    <Layout>
       <TeamPage />
-    </div>
+    </Layout>
   );
 };
 

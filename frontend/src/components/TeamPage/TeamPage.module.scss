@@ -16,10 +16,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 3.33rem;
 }
 
 .cardsItem {
-  margin-top: 3.33rem;
 }
 
 .lastCard {

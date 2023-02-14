@@ -15,31 +15,36 @@ const Footer = () => {
       </div>
       <div className={styles.links}>
         <div className={styles.footerNav}>
-          <Link href="/portfolio" className={styles.footerNavItem}>
+          <Link
+            href="/portfolio"
+            className={styles.footerNavItem}
+            scroll={false}
+          >
             Portfolio
           </Link>
-          <Link href="/blog" className={styles.footerNavItem}>
+          <Link href="/blog" className={styles.footerNavItem} scroll={false}>
             Blog
           </Link>
-          <Link href="/team" className={styles.footerNavItem}>
+          <Link href="/team" className={styles.footerNavItem} scroll={false}>
             Team
           </Link>
         </div>
         <div className={styles.socialLinks}>
-          <Link href="" className={styles.socialLinksItem}>
+          <Link href="" className={styles.socialLinksItem} target="_blank">
             <TwitterLogo />
           </Link>
-          <Link href="" className={styles.socialLinksItem}>
+          <Link href="" className={styles.socialLinksItem} target="_blank">
             <InstagramLogo />
           </Link>
-          <Link href="" className={styles.socialLinksItem}>
+          <Link href="" className={styles.socialLinksItem} target="_blank">
             <FbLogo />
           </Link>
         </div>
       </div>
       <div className={styles.bottomRow}>
         <div className={styles.bottomText}>
-        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua.
         </div>
         <div className={styles.bottomLogo}>
           <Logo />

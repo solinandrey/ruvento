@@ -1,10 +1,11 @@
 import PortfolioPage from "@components/PortfolioPage";
+import Layout from "@src/components/Layout";
 
 const Portfolio = () => {
   return (
-    <div className="portfolio">
+    <Layout>
       <PortfolioPage />
-    </div>
+    </Layout>
   );
 };
 

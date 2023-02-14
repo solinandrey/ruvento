@@ -1,10 +1,11 @@
 import BlogPage from "@components/BlogPage";
+import Layout from "@src/components/Layout";
 
 const Blog = () => {
   return (
-    <div className="blog">
+    <Layout>
       <BlogPage />
-    </div>
+    </Layout>
   );
 };
 

@@ -1,16 +1,19 @@
 import App from "next/app";
 import Head from "next/head";
 import "../styles/global.scss";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 // import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import Header from "@src/components/Header";
 import Footer from "@src/components/Footer";
+import { useRouter } from "next/router";
+import { AnimatePresence } from "framer-motion";
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
   // const { global } = pageProps;
+  const router = useRouter();
 
   return (
     <>
@@ -21,10 +24,22 @@ const MyApp = ({ Component, pageProps }: any) => {
         /> */}
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
-        <Header />
+      <Header />
+
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => {
+          if (typeof window !== "undefined") {
+            window.scrollTo({ top: 0 });
+          }
+        }}
+      >
         {/* <Component {...pageProps} /> */}
-        <Component />
-      {/* </GlobalContext.Provider> */}
+        <Component key={router.asPath} />
+        {/* </GlobalContext.Provider> */}
+      </AnimatePresence>
+
       <Footer />
     </>
   );
@@ -48,7 +63,7 @@ MyApp.getInitialProps = async (ctx: any) => {
   // });
   // Pass the data to our page via props
   // return { ...appProps, pageProps: { global: globalRes.data } };
-  return {}
+  return {};
 };
 
 export default MyApp;
