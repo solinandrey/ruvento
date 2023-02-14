@@ -1,0 +1,42 @@
+.team {
+  margin-top: 7.29rem;
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+}
+
+.title {
+  color: $orange;
+  font-size: 8.68rem;
+  font-family: $circeExtraBold;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardsItem {
+  margin-top: 3.33rem;
+}
+
+.lastCard {
+  width: 24.6rem;
+  margin-top: 5.29rem;
+}
+
+.lastCardTitle {
+  font-family: $circeBold;
+  font-size: 4.51rem;
+  color: $orange;
+  text-transform: uppercase;
+}
+
+.lastCardDescription {
+  font-family: $circe;
+  font-size: 2.43rem;
+  color: $black;
+  margin-top: .7rem;
+}
