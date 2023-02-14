@@ -53,13 +53,12 @@ const TeamPage = () => {
       <div className={styles.cards}>
         {teamMembers.map((item, idx) => {
           return (
-            <div className={styles.cardsItem}>
+            <div className={styles.cardsItem} key={`teammate-${idx}`}>
               <InfoCard
                 title={item.title}
                 topTitle
                 image={item.image}
                 description={item.description}
-                key={`teammate-${idx}`}
               />
             </div>
           );
