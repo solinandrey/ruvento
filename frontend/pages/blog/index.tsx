@@ -1,5 +1,6 @@
-import BlogPage from "@components/BlogPage";
-import Layout from "@src/components/Layout";
+import dynamic from 'next/dynamic';
+const BlogPage = dynamic(() => import('@components/BlogPage'));
+const Layout = dynamic(() => import('@src/components/Layout'));
 
 const Blog = () => {
   return (

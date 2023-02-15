@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { fetchAPI } from "../lib/api";
-import MainPage from "@components/MainPage";
-import Layout from "@src/components/Layout";
+
+import dynamic from 'next/dynamic';
+const MainPage = dynamic(() => import('@components/MainPage'));
+const Layout = dynamic(() => import('@src/components/Layout'));
 
 const inter = Inter({ subsets: ["latin"] });
 
