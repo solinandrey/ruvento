@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: any) => {
       {/* <GlobalContext.Provider value={global.attributes}> */}
       <Header />
 
-      {/* <AnimatePresence
+      <AnimatePresence
         mode="wait"
         initial={false}
         onExitComplete={() => {
@@ -34,11 +34,13 @@ const MyApp = ({ Component, pageProps }: any) => {
             window.scrollTo({ top: 0 });
           }
         }}
-      > */}
+      >
         {/* <Component {...pageProps} /> */}
-        <Component key={router.asPath} />
+        <div className="page-container" key={router.asPath}>
+          <Component />
+        </div>
         {/* </GlobalContext.Provider> */}
-      {/* </AnimatePresence> */}
+      </AnimatePresence>
 
       <Footer />
     </>

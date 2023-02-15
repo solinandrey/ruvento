@@ -6,12 +6,12 @@ interface Props {
 
 const Layout = ({ children }: Props) => (
   <motion.div
-    initial={{ y: 30, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    exit={{ y: 30, opacity: 0 }}
+    initial={{ x: -30, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: 30, opacity: 0 }}
     transition={{
       type: "spring",
-      duration: 0.4
+      duration: 0.3
     }}
   >
     {children}
