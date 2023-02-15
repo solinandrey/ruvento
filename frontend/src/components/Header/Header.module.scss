@@ -55,3 +55,15 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 25rem
+  }
+
+  .linkItem {
+    font-size: 3.73rem;
+    display: flex;
+    align-items: flex-end;
+  }
+}

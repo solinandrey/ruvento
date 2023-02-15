@@ -72,3 +72,22 @@
     transform-origin: 0;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .titleContent {
+    margin-top: 12rem;
+  }
+
+  .title {
+    font-size: 18rem;
+  }
+
+  .lowerRowDescription {
+    font-size: 3.6rem;
+    max-width: 46rem;
+  }
+
+  .linkText {
+    font-size: 4.2rem;
+  }
+}
