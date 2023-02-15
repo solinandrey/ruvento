@@ -1,5 +1,6 @@
-import TeamPage from "@components/TeamPage";
-import Layout from "@src/components/Layout";
+import dynamic from 'next/dynamic';
+const TeamPage = dynamic(() => import('@components/TeamPage'));
+const Layout = dynamic(() => import('@src/components/Layout'));
 
 const Team = () => {
   return (

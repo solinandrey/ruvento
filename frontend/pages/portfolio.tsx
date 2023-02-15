@@ -1,5 +1,6 @@
-import PortfolioPage from "@components/PortfolioPage";
-import Layout from "@src/components/Layout";
+import dynamic from 'next/dynamic';
+const PortfolioPage = dynamic(() => import('@components/PortfolioPage'));
+const Layout = dynamic(() => import('@src/components/Layout'));
 
 const Portfolio = () => {
   return (
