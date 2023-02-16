@@ -45,3 +45,19 @@
   width: 16.53rem;
   height: 12.5rem;
 }
+
+
+@media screen and (max-width: $mobileSize) {
+
+  .latestNews {
+    margin-top: 12rem;
+  }
+
+  .title {
+    font-size: 9.8rem;
+  }
+
+  .newsText {
+    font-size: 3rem;
+  }
+}

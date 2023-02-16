@@ -32,3 +32,9 @@
   color: $black;
   margin-top: .7rem;
 }
+
+@media screen and (max-width: $mobileSize) {
+  .desc {
+    font-size: 3rem;
+  }
+}

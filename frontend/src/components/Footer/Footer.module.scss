@@ -83,3 +83,39 @@
   height: auto;
 }
 
+@media screen and (max-width: $mobileSize) {
+
+  .title {
+    font-size: 5rem;
+    width: 79rem;
+    & span {
+      font-size: 3rem;
+      transform: translateY(-0.8rem);
+    }
+  }
+
+  .socialLinksItem{
+    width: 7rem;
+    &:not(:first-of-type) {
+      margin-left: 2rem;
+    }
+  }
+
+  .footerNavItem {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    &:not(:first-of-type) {
+      margin-left: 4.7rem;
+    }
+  }
+
+  .bottomText {
+    font-size: 3rem;
+  }
+  
+  .bottomLogo {
+    width: 19rem;
+  }
+}
+

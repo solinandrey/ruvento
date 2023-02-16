@@ -53,3 +53,14 @@
   from {transform: translate3d(0,0,0);}
   to {transform: translate3d(-100%,0,0);}
 }
+
+@media screen and (max-width: $mobileSize) {
+  .logoItem {
+    height: 8rem;
+    margin-left: 4.45rem;
+  }
+
+  .portfolioBlock {
+    margin-top: 12rem;
+  }
+}

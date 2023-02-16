@@ -73,7 +73,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $mobileSize) {
   .titleContent {
     margin-top: 12rem;
   }

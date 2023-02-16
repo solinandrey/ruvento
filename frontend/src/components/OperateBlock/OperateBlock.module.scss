@@ -46,3 +46,24 @@
   justify-content: space-between;
   margin-top: 4.16rem;
 }
+
+@media screen and (max-width: $mobileSize) {
+  .operateBlock {
+    margin-top: 12rem;
+  }
+
+  .topDesc {
+    width: 50%;
+    font-size: 3rem;
+    max-width: 35rem;
+    padding-left: 4rem;
+  }
+
+  .topTitle {
+    font-size: 9.8rem;
+    &:after {
+      right: -5rem;
+      width: .4rem;
+    }
+  }
+}
