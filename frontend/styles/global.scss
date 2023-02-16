@@ -25,3 +25,9 @@ a {
   min-height: 100vh;
 }
 
+@media screen and (max-width: $mobileSize) {
+  .page-container {
+    min-height: 50vh;
+  }
+}
+

@@ -40,3 +40,16 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: $mobileSize) {
+  .title {
+    font-size: 7rem;
+    text-decoration-thickness: 0.6rem;
+    text-underline-offset: 1rem;
+  }
+
+  .logoItem {
+    max-height: 5rem;
+    width: 37rem;
+  }
+}

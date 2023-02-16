@@ -40,3 +40,12 @@
   color: $black;
   margin-top: .7rem;
 }
+
+@media screen and (max-width: $mobileSize) {
+  .lastCardDescription {
+    font-size: 3rem;
+  }
+
+  .cardsItem {
+  }
+}
