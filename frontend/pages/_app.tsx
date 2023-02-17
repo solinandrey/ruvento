@@ -12,7 +12,6 @@ import { AnimatePresence } from "framer-motion";
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
-  const { articles } = pageProps;
   const router = useRouter();
 
   return (
@@ -23,7 +22,7 @@ const MyApp = ({ Component, pageProps }: any) => {
           href={getStrapiMedia(global.attributes.favicon)}
         /> */}
       </Head>
-      <GlobalContext.Provider value={global.attributes}>
+      <GlobalContext.Provider value={global}>
         <Header />
 
         <AnimatePresence
