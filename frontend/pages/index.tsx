@@ -2,13 +2,24 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { fetchAPI } from "../lib/api";
 
-import dynamic from 'next/dynamic';
-const MainPage = dynamic(() => import('@components/MainPage'));
-const Layout = dynamic(() => import('@src/components/Layout'));
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
+import { MainPageResponse } from "@src/types";
+const MainPage = dynamic(() => import("@components/MainPage"));
+const Layout = dynamic(() => import("@src/components/Layout"));
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ articles }: any) {
+interface Props {
+  homepage: MainPageResponse['data']
+  MainTitle: MainPageResponse['data']['attributes']['MainTitle']
+}
+
+export default function Home({homepage,MainTitle}: Props) {
+  useEffect(() => {
+    console.log(MainTitle, "homepage");
+  });
+
   return (
     <>
       <Head>
@@ -18,7 +29,7 @@ export default function Home({ articles }: any) {
       </Head>
       <main>
         <Layout>
-          <MainPage />
+          <MainPage titleBlock={MainTitle} />
         </Layout>
         {/* {articles.map((item:any) => <div>{item.attributes.title}</div>)} */}
       </main>
@@ -28,11 +39,14 @@ export default function Home({ articles }: any) {
 
 export async function getStaticProps() {
   console.log("i am on the server");
-  // const articles =  await fetchAPI('/articles')
+  const homepage: MainPageResponse = await fetchAPI("/homepage", {
+      populate: encodeURI("*"),
+  });
 
   return {
     props: {
-      // articles: articles.data
+      homepage: homepage.data,
+      MainTitle: homepage.data.attributes.MainTitle
     },
   };
 }

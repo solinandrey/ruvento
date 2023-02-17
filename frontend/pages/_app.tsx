@@ -2,7 +2,7 @@ import App from "next/app";
 import Head from "next/head";
 import "../styles/global.scss";
 import { createContext, useEffect, useState } from "react";
-// import { fetchAPI } from "../lib/api";
+import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import Header from "@src/components/Header";
 import Footer from "@src/components/Footer";
@@ -12,7 +12,7 @@ import { AnimatePresence } from "framer-motion";
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
-  // const { global } = pageProps;
+  const { articles } = pageProps;
   const router = useRouter();
 
   return (
@@ -23,24 +23,23 @@ const MyApp = ({ Component, pageProps }: any) => {
           href={getStrapiMedia(global.attributes.favicon)}
         /> */}
       </Head>
-      {/* <GlobalContext.Provider value={global.attributes}> */}
-      <Header />
+      <GlobalContext.Provider value={global.attributes}>
+        <Header />
 
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        onExitComplete={() => {
-          if (typeof window !== "undefined") {
-            window.scrollTo({ top: 0 });
-          }
-        }}
-      >
-        {/* <Component {...pageProps} /> */}
-        <div className="page-container" key={router.asPath}>
-          <Component />
-        </div>
-        {/* </GlobalContext.Provider> */}
-      </AnimatePresence>
+        <AnimatePresence
+          mode="wait"
+          initial={false}
+          onExitComplete={() => {
+            if (typeof window !== "undefined") {
+              window.scrollTo({ top: 0 });
+            }
+          }}
+        >
+          <div className="page-container" key={router.asPath}>
+            <Component {...pageProps} />
+          </div>
+        </AnimatePresence>
+      </GlobalContext.Provider>
 
       <Footer />
     </>
@@ -53,18 +52,15 @@ const MyApp = ({ Component, pageProps }: any) => {
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getInitialProps = async (ctx: any) => {
   // // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  // const appProps = await App.getInitialProps(ctx);
-  // // Fetch global site settings from Strapi
-  // const globalRes = await fetchAPI("/global", {
-  //   populate: {
-  //     favicon: "*",
-  //     defaultSeo: {
-  //       populate: "*",
-  //     },
-  //   },
-  // });
+  const appProps = await App.getInitialProps(ctx);
+  // Fetch global site settings from Strapi
+  const globalRes = await fetchAPI("/homepage", {
+    populate: "*",
+  });
+
+  console.log(globalRes);
   // Pass the data to our page via props
-  // return { ...appProps, pageProps: { global: globalRes.data } };
+  return { ...appProps, pageProps: { home: globalRes.data } };
   return {};
 };
 
