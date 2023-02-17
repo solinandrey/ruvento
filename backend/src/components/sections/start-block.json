@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_start_blocks",
+  "info": {
+    "displayName": "StartBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "linkText": {
+      "type": "string"
+    }
+  }
+}
