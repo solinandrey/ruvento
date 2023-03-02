@@ -2,6 +2,12 @@
   margin-top: 9.44rem;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .title {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .title {
   font-family: $circeBold;
   color: $black;

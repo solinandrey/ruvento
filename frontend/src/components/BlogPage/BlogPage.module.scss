@@ -3,6 +3,12 @@
   margin-top: 9.24rem;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .blog {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .articles {
   display: flex;
   flex-direction: column;

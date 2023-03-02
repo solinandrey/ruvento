@@ -4,6 +4,12 @@
   padding-right: $layoutPadding;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .team {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .title {
   color: $orange;
   font-size: 8.68rem;

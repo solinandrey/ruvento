@@ -1,6 +1,7 @@
 @import './fonts.scss';
 
-$layoutPadding: 6.88rem;
+$layoutPadding: 12rem;
+$bigScreenLayoutPadding: 15rem;
 
 $circe: 'Circe';
 $circeBold: 'CirceBold';
@@ -16,3 +17,4 @@ $white: #fff;
 $transitionFunc: cubic-bezier(.5,.16,.26,.97);
 
 $mobileSize: 600px;
+$bigScreen: 1920px;
