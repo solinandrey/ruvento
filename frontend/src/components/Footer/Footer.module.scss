@@ -5,6 +5,12 @@
   margin-bottom: 10.2rem;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .footer {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .title {
   font-family: $circeBold;
   font-size: 3.47rem;

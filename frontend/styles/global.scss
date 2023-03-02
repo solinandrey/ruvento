@@ -14,7 +14,7 @@ body {
 }
 
 html {
-  font-size: 1vw;
+  font-size: 70%;
 }
 
 a {
@@ -28,6 +28,12 @@ a {
 @media screen and (max-width: $mobileSize) {
   .page-container {
     min-height: 50vh;
+  }
+}
+
+@media  screen and (min-width: 1920px) {
+  html {
+    font-size: 0.8vw;
   }
 }
 

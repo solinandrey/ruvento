@@ -6,6 +6,12 @@
   padding-top: 2.64rem;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .header {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .logo {
   width: 12.15rem;
   & img {

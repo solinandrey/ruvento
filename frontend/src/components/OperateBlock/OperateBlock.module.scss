@@ -4,6 +4,12 @@
   padding-right: $layoutPadding;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .operateBlock {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .content {
 }
 

@@ -13,6 +13,12 @@
   padding: 0 $layoutPadding;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .title {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .logos {
   padding: 0 4.24rem;
   margin-top: 6.38rem;

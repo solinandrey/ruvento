@@ -4,6 +4,12 @@
   margin-top: 7.9rem;
 }
 
+@media screen and (min-width: $bigScreen) {
+  .latestNews {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
 .title {
   font-family: $circeBold;
   font-size: 8.68rem;
