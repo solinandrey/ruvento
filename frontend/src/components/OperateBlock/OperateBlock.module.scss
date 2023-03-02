@@ -1,7 +1,8 @@
 .operateBlock {
-  margin-top: 7.85rem;
+  margin-top: 15.55rem;
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
+  max-width: $contentWidth;
 }
 
 @media screen and (min-width: $bigScreen) {
@@ -16,7 +17,14 @@
 .top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.line {
+  // height: 100%;
+  width: .2rem;
+  background: $orange;
 }
 
 .topTitle {
@@ -27,16 +35,17 @@
   width: 50%;
   text-transform: uppercase;
   line-height: 1;
+  max-width: 50rem;
 
-  &:after {
-    position: absolute;
-    content: '';
-    right: -5rem;
-    top: 0;
-    height: 100%;
-    width: .2rem;
-    background: $orange;
-  }
+  // &:after {
+  //   position: absolute;
+  //   content: '';
+  //   right: -5rem;
+  //   top: 0;
+  //   height: 100%;
+  //   width: .2rem;
+  //   background: $orange;
+  // }
 }
 
 .topDesc {

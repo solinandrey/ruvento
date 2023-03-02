@@ -26,6 +26,7 @@ const OperateBlock = () => {
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.topTitle}>How we operate</div>
+          <div className={styles.line}></div>
           <div className={styles.topDesc}>
             sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
