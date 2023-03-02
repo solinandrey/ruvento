@@ -8,6 +8,12 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .portfolio {
+    padding: 0 $mobileLayoutPadding;
+  }
+}
+
 .title {
   font-family: $circeBold;
   color: $black;

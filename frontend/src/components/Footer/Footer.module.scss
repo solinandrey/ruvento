@@ -1,13 +1,19 @@
 .footer {
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
-  margin-top: 17.63rem;
+  margin-top: 15rem;
   margin-bottom: 10.2rem;
 }
 
 @media screen and (min-width: $bigScreen) {
   .footer {
     padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .footer {
+    padding: 0 $mobileLayoutPadding;
   }
 }
 

@@ -2,12 +2,18 @@
   margin-top: 15.55rem;
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
-  max-width: $contentWidth;
+  // max-width: $contentWidth;
 }
 
 @media screen and (min-width: $bigScreen) {
   .operateBlock {
     padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .operateBlock {
+    padding: 0 $mobileLayoutPadding;
   }
 }
 
@@ -19,6 +25,7 @@
   align-items: center;
   justify-content: flex-start;
   align-items: stretch;
+  max-width: $contentWidth;
 }
 
 .line {
@@ -52,14 +59,16 @@
   width: 50%;
   font-size: 2.43rem;
   font-family: $circe;
-  max-width: 31.25rem;
-  padding-left: 4rem;
+  // max-width: 31.25rem;
+  padding-left: 7rem;
+  display: flex;
+  align-items: center;
 }
 
 .cards {
   display: flex;
   justify-content: space-between;
-  margin-top: 4.16rem;
+  margin-top: 7rem;
 }
 
 @media screen and (max-width: $mobileSize) {
@@ -76,9 +85,11 @@
 
   .topTitle {
     font-size: 9.8rem;
-    &:after {
-      right: -5rem;
-      width: .4rem;
-    }
+    display: flex;
+    align-items: center;
+    // &:after {
+    //   right: -5rem;
+    //   width: .4rem;
+    // }
   }
 }

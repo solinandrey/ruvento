@@ -1,13 +1,23 @@
 .latestNews {
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
-  margin-top: 7.9rem;
-  max-width: $contentWidth;
+  margin-top: 15rem;
+  // max-width: $contentWidth;
 }
 
 @media screen and (min-width: $bigScreen) {
   .latestNews {
     padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .latestNews {
+    padding: 0 $mobileLayoutPadding;
+  }
+
+  .newsText {
+    max-width: 70rem;
   }
 }
 

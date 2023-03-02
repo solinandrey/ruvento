@@ -9,6 +9,13 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .blog {
+    padding: 0 $mobileLayoutPadding;
+  }
+}
+
+
 .articles {
   display: flex;
   flex-direction: column;

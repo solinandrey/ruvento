@@ -22,16 +22,20 @@ a {
 }
 
 .page-container {
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .main-page {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
 }
 
 @media screen and (max-width: $mobileSize) {
+  html {
+    font-size: 1vw;
+  }
+
   .page-container {
     min-height: 50vh;
   }

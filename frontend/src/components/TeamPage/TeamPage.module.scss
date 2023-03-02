@@ -10,6 +10,12 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .team {
+    padding: 0 $mobileLayoutPadding;
+  }
+}
+
 .title {
   color: $orange;
   font-size: 8.68rem;
@@ -29,7 +35,7 @@
 }
 
 .lastCard {
-  width: 24.6rem;
+  width: 31rem;
   margin-top: 5.29rem;
 }
 

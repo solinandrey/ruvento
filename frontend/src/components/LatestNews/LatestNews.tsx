@@ -5,16 +5,19 @@ import testImage from "@images/test.png";
 const newsMock = [
   {
     text: `sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  sit amet, consectetur adipiscing elit, sed do eiusmod sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   sit amet, consectetur adipiscing elit, sed do eiusmod `,
     image: testImage,
   },
   {
     text: `sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  sit amet, consectetur adipiscing elit, sed do eiusmod sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   sit amet, consectetur adipiscing elit, sed do eiusmod `,
     image: testImage,
   },
   {
     text: `sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  sit amet, consectetur adipiscing elit, sed do eiusmod sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
   sit amet, consectetur adipiscing elit, sed do eiusmod `,
     image: testImage,
   },
