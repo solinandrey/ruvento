@@ -2,18 +2,6 @@
   margin-top: 9.44rem;
 }
 
-@media screen and (min-width: $bigScreen) {
-  .title {
-    padding: 0 $bigScreenLayoutPadding;
-  }
-}
-
-@media screen and (max-width: $mobileSize) {
-  .title {
-    padding: 0 $mobileLayoutPadding;
-  }
-}
-
 .title {
   font-family: $circeBold;
   color: $black;
@@ -38,18 +26,21 @@
   align-items: center;
   border: 0.14rem solid $orange;
   row-gap: 7.43rem;
+  column-gap: 6rem;
 }
 
 .logoItem {
-  max-height: 5rem;
-  width: 18rem;
+  height: 5rem;
+  width: 23rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: grayscale(1);
 
   & img {
-    height: auto;
+    height: 100%;
     width: 100%;
+    object-fit: contain;
   }
 }
 
@@ -63,5 +54,17 @@
   .logoItem {
     max-height: 5rem;
     width: 37rem;
+  }
+}
+
+@media screen and (min-width: $bigScreen) {
+  .title {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .title {
+    padding: 0 $mobileLayoutPadding;
   }
 }
