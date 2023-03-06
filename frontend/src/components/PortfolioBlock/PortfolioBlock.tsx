@@ -88,6 +88,7 @@ const PortfolioBlock = () => {
                           target="_blank"
                           className={styles.logoItem}
                           key={item.alt + idx}
+                          rel="noreferrer"
                         >
                           <Image src={item.logo} alt={item.alt} />
                         </a>

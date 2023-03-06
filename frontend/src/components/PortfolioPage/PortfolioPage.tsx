@@ -79,6 +79,7 @@ const PortfolioPage = () => {
                 key={item.alt + idx}
                 href={item.link}
                 target="_blank"
+                rel="noreferrer"
               >
                 <Image src={item.logo} alt={item.alt} />
               </Link>
