@@ -11,6 +11,13 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .operateBlock {
+    padding: 0 $mobileLayoutPadding;
+    max-width: unset;
+  }
+}
+
 .content {
 }
 

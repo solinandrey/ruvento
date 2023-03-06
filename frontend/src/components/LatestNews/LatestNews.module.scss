@@ -11,6 +11,18 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .latestNews {
+    padding: 0 $mobileLayoutPadding;
+    max-width: unset;
+  }
+  
+  .newsImage {
+    width: 16.53rem;
+    height: 12.5rem;
+  }
+}
+
 .title {
   font-family: $circeBold;
   font-size: 8.68rem;
@@ -66,5 +78,6 @@
 
   .newsText {
     font-size: 3rem;
+    width: 72rem;
   }
 }

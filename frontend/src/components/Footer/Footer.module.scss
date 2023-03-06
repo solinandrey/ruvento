@@ -11,6 +11,12 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .footer {
+    padding: 0 $mobileLayoutPadding;
+  }
+}
+
 .title {
   font-family: $circeBold;
   font-size: 3.47rem;

@@ -32,6 +32,10 @@ a {
 }
 
 @media screen and (max-width: $mobileSize) {
+  html {
+    font-size: 1vw;
+  }
+
   .page-container {
     min-height: 50vh;
   }

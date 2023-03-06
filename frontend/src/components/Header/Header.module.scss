@@ -12,6 +12,12 @@
   }
 }
 
+@media screen and (max-width: $mobileSize) {
+  .header {
+    padding: 2.64rem $mobileLayoutPadding;
+  }
+}
+
 .logo {
   width: 12.15rem;
   & img {
