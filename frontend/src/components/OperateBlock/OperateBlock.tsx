@@ -3,6 +3,7 @@ import InfoCard from "@components/InfoCard";
 import testImage from "@images/test.png";
 import operate1 from '@images/operate1.jpg';
 import operate2 from '@images/operate2.jpg';
+import operate3 from '@images/operate3.jpeg';
 
 const cardsContent = [
   {
@@ -18,7 +19,7 @@ const cardsContent = [
   {
     title: "HOW WE CAN HELP",
     description: "Thanks to our experience as operators, we have extensive expertise in R&D, Product Development and Management, and Launch Marketing. From early funding to product development to finding the right global business partners and raising Series A – we help teams achieve their milestones without interfering in their core values and business operations.",
-    image: operate2,
+    image: operate3,
   },
 ];
 

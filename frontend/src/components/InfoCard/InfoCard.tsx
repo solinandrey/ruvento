@@ -4,7 +4,7 @@ import styles from "./InfoCard.module.scss";
 interface Props {
   topTitle?: boolean;
   title: string;
-  image: string | StaticImageData;
+  image: StaticImageData;
   description: string;
   mainPage?: boolean
 }
@@ -15,8 +15,7 @@ const InfoCard = ({ topTitle, title, image, description, mainPage }: Props) => {
       {topTitle && (
         <div className={`${styles.title} ${styles.topTitle}`}>{title}</div>
       )}
-      <div className={styles.image}>
-        <Image src={image} alt={title} />
+      <div className={styles.image} style={{backgroundImage: `url(${image.src})`}}>
       </div>
       {!topTitle && (
         <div className={`${styles.title} ${styles.bottomTitle}`}>{title}</div>
