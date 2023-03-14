@@ -39,9 +39,10 @@
   font-family: $circe;
   font-size: 3rem;
   max-width: 27.6rem;
-  transform: translateY(-1rem);
+  transform: translateY(-0.5rem);
   text-transform: uppercase;
   margin-left: 2.7rem;
+  line-height: 1.35;
 }
 
 .link {

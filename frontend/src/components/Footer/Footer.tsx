@@ -22,9 +22,9 @@ const Footer = () => {
           >
             Portfolio
           </Link>
-          <Link href="/blog" className={styles.footerNavItem} scroll={false}>
+          {/* <Link href="/blog" className={styles.footerNavItem} scroll={false}>
             Blog
-          </Link>
+          </Link> */}
           <Link href="/team" className={styles.footerNavItem} scroll={false}>
             Team
           </Link>
