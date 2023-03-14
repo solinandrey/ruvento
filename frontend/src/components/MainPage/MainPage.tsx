@@ -9,7 +9,7 @@ const MainPage = () => {
       <TitleBlock />
       <PortfolioBlock />
       <OperateBlock />
-      <LatestNews />
+      {/* <LatestNews /> */}
     </div>
   );
 };

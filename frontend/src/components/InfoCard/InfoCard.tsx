@@ -6,11 +6,12 @@ interface Props {
   title: string;
   image: string | StaticImageData;
   description: string;
+  mainPage?: boolean
 }
 
-const InfoCard = ({ topTitle, title, image, description }: Props) => {
+const InfoCard = ({ topTitle, title, image, description, mainPage }: Props) => {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${mainPage ? styles.mainPage : ''}`}>
       {topTitle && (
         <div className={`${styles.title} ${styles.topTitle}`}>{title}</div>
       )}

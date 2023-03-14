@@ -12,10 +12,10 @@ const headerLinks = [
     label: "Team",
     link: "/team",
   },
-  {
-    label: "Blog",
-    link: "/blog",
-  },
+  // {
+  //   label: "Blog",
+  //   link: "/blog",
+  // },
 ];
 
 const Header = () => {

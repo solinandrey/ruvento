@@ -2,7 +2,7 @@
   margin-top: 15.55rem;
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
-  max-width: $contentWidth;
+  // max-width: $contentWidth;
 }
 
 @media screen and (min-width: $bigScreen) {
@@ -59,8 +59,10 @@
   width: 50%;
   font-size: 2.43rem;
   font-family: $circe;
-  max-width: 31.25rem;
+  max-width: 50rem;
   padding-left: 4rem;
+  display: flex;
+  align-items: center;
 }
 
 .cards {

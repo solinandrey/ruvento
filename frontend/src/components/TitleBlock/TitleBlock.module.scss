@@ -13,7 +13,7 @@
 }
 
 .title {
-  font-size: 19rem;
+  font-size: 12rem;
   color: $orange;
   text-transform: uppercase;
   font-family: $circeExtraBold;
@@ -37,9 +37,11 @@
 
 .lowerRowDescription {
   font-family: $circe;
-  font-size: 3.38rem;
-  max-width: 44rem;
+  font-size: 3rem;
+  max-width: 27.6rem;
   transform: translateY(-1rem);
+  text-transform: uppercase;
+  margin-left: 2.7rem;
 }
 
 .link {

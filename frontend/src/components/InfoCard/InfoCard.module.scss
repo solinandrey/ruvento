@@ -1,5 +1,8 @@
 .card {
   width: 24rem;
+  &.mainPage {
+    width: 30rem;
+  }
 }
 
 .image {
@@ -15,6 +18,9 @@
   font-family: $circeExtraBold;
   font-size: 2.43rem;
   text-transform: uppercase;
+  .mainPage & {
+    font-size: 2rem;
+  }
 }
 
 .topTitle {
@@ -31,6 +37,9 @@
   font-size: 2.43rem;
   color: $black;
   margin-top: .7rem;
+  .mainPage & {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: $mobileSize) {

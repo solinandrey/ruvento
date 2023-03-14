@@ -9,23 +9,23 @@ const TitleBlock = () => {
       <div className={styles.titleContent}>
         <div className={styles.upperRow}>
           <div className={`${styles.upperRowTitle} ${styles.title}`}>
-            who we
+          TECHNOLOGIES 
           </div>
         </div>
         <div className={styles.lowerRow}>
-          <div className={`${styles.lowerRowTitle} ${styles.title}`}>are</div>
+          <div className={`${styles.lowerRowTitle} ${styles.title}`}>POWERED<br/>BY VALUES</div>
           <div className={styles.lowerRowDescription}>
-            WORKING TOGETHER<br/>TO EMPOWER THE WORLD WITH YOUR TECHNOLOGY
+          Empowering founders<br/>to advance Southeast Asia through tech
           </div>
         </div>
-        <Link className={styles.link} href="/blog">
+        {/* <Link className={styles.link} href="/blog">
           <div className={styles.linkText}>
             Learn more about Ruvento
           </div>
           <div className={styles.linkArrow}>
             <ArrowRight />
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

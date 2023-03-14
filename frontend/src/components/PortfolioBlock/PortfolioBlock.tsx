@@ -39,15 +39,15 @@ interface CompanyLogo {
 
 const companies: CompanyLogo[] = [
   { logo: refocus, alt: "Refocus", link: "https://refocus.me/" },
-  { logo: alcatraz, alt: "Alcatraz AI", link: "https://www.alcatraz.ai/" },
+  { logo: boom, alt: "Boom", link: "https://boomsupersonic.com/" },
+  { logo: solugen, alt: "Solugen", link: "https://solugen.com/" },
+  { logo: eightSleep, alt: "Eight Sleep", link: "https://www.eightsleep.com/" },
   {
     logo: mighty,
     alt: "Mighty Buildings",
     link: "https://www.mightybuildings.com/",
   },
-  { logo: boom, alt: "Boom", link: "https://boomsupersonic.com/" },
-  { logo: solugen, alt: "Solugen", link: "https://solugen.com/" },
-  { logo: eightSleep, alt: "Eight Sleep", link: "https://www.eightsleep.com/" },
+  { logo: alcatraz, alt: "Alcatraz AI", link: "https://www.alcatraz.ai/" },
   { logo: swat, alt: "Swat", link: "https://www.swatmobility.com/" },
   { logo: elctroneek, alt: "Electroneek", link: "https://electroneek.com/" },
   { logo: pointOne, alt: "Point One", link: "https://pointonenav.com/" },
@@ -74,7 +74,7 @@ const PortfolioBlock = () => {
   return (
     <div className={styles.portfolioBlock}>
       <div className={styles.container}>
-        <div className={styles.title}>featured portfolio</div>
+        <div className={styles.title}>our portfolio</div>
         <div className={styles.logos}>
           {["up", "down"].map((part) => (
             <div className={`${styles.logoRow} ${styles[part]}`} key={part}>
