@@ -40,7 +40,7 @@
   font-family: $circe;
   font-size: 2.43rem;
   color: $black;
-  margin-top: .7rem;
+  margin-top: 0.7rem;
   .mainPage & {
     font-size: 2rem;
   }
@@ -49,9 +49,30 @@
 @media screen and (max-width: $mobileSize) {
   .desc {
     font-size: 3rem;
+    .mainPage & {
+      font-size: 4rem;
+    }
   }
 
   .title {
     font-size: 3rem;
+    .mainPage & {
+      font-size: 5rem;
+    }
+  }
+
+  .card {
+    &.mainPage {
+      width: 100%;
+      & .image {
+        height: 45rem;
+      }
+      &:not(:first-of-type) {
+        margin-top: 10rem;
+      }
+      &:first-of-type {
+        margin-top: 15rem;
+      }
+    }
   }
 }

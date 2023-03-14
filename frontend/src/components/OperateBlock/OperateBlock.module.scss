@@ -76,18 +76,36 @@
     margin-top: 12rem;
   }
 
+  .top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
   .topDesc {
-    width: 50%;
-    font-size: 3rem;
-    max-width: 35rem;
-    padding-left: 4rem;
+    width: 100%;
+    font-size: 4rem;
+    max-width: unset;
+    margin-top: 3rem;
   }
 
   .topTitle {
-    font-size: 9.8rem;
-    &:after {
-      right: -5rem;
-      width: .4rem;
-    }
+    font-size: 8.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: unset;
+  }
+
+  .line {
+    height: 2px;
+    width: 50rem;
+    margin-top: 3rem;
+    background: $orange;
+  }
+
+  .cards {
+    flex-direction: column;
   }
 }
