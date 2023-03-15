@@ -1,0 +1,8 @@
+.firstScreen {
+  height: calc(100vh - 9.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 87rem;
+  min-height: 60rem;
+}
