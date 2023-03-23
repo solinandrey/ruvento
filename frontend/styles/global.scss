@@ -31,6 +31,59 @@ a {
   align-items: center;
 }
 
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $white;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & circle {
+    stroke-dasharray: 20;
+    // transition: stroke-dasharray .3s ease-in-out;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear infinite;
+  }
+
+  &.done {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+
+  & svg {
+    transition: transform 3s ease-in-out;
+  }
+
+  &.loaded {
+    & svg {
+      // transform: rotateZ(-360deg);
+      transform-origin: 50% 50%;
+    }
+    & circle {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: complete 1s linear;
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 600;
+  }
+}
+
+@keyframes complete {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
 @media screen and (max-width: $mobileSize) {
   html {
     font-size: 1vw;

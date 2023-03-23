@@ -8,6 +8,7 @@ import Header from "@src/components/Header";
 import Footer from "@src/components/Footer";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
+import { Roboto } from 'next/font/google';
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 

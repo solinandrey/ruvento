@@ -17,7 +17,8 @@
   font-size: 12rem;
   color: $orange;
   text-transform: uppercase;
-  font-family: $circeExtraBold;
+  // font-family: $circeExtraBold;
+  @include robotoBold();
   line-height: 0.9;
 }
 
@@ -37,13 +38,14 @@
 .lowerRowTitle {}
 
 .lowerRowDescription {
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   font-size: 3rem;
   max-width: 27.6rem;
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.2rem);
   text-transform: uppercase;
   margin-left: 2.7rem;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .link {

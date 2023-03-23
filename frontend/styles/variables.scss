@@ -9,6 +9,24 @@ $circeBold: 'CirceBold';
 $circeExtraBold: 'CirceExtraBold';
 $ralewayReg: 'RalewayRegular';
 $ralewayLight: 'RalewayExtraLight';
+$roboto: 'Roboto';
+
+@mixin robotoBold() {
+  font-family: $roboto;
+  font-weight: 900;
+}
+
+@mixin robotoMid() {
+  font-family: $roboto;
+  font-weight: 500;
+}
+
+@mixin robotoLight() {
+  font-family: $roboto;
+  font-weight: 400;
+}
+
+
 
 $black: #000000;
 $orange: #F25B19;
