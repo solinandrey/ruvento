@@ -24,7 +24,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script strategy="afterInteractive">
+        <Script strategy="afterInteractive" id="preloaderScript">
           {`document.fonts.onloadingdone = () => { 
               setTimeout(() => {
                 document.querySelector('.preloader').classList.add('loaded');
