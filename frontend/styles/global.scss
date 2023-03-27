@@ -42,11 +42,21 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  & circle {
-    stroke-dasharray: 20;
-    // transition: stroke-dasharray .3s ease-in-out;
-    stroke-dashoffset: 1000;
-    animation: dash 3s linear infinite;
+
+  & .st1 {
+    animation: anim 0.8s linear infinite;
+  }
+
+  & .st11 {
+    animation-delay: 0s;
+  }
+
+  & .st12 {
+    animation-delay: 0.1s;
+  }
+
+  & .st13 {
+    animation-delay: 0.2s;
   }
 
   &.done {
@@ -56,6 +66,8 @@ a {
 
   & svg {
     transition: transform 3s ease-in-out;
+    width: 30rem;
+    height: 30rem;
   }
 
   &.loaded {
@@ -63,24 +75,14 @@ a {
       // transform: rotateZ(-360deg);
       transform-origin: 50% 50%;
     }
-    & circle {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: complete 1s linear;
-    }
   }
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 600;
-  }
-}
-
-@keyframes complete {
-  to {
-    stroke-dashoffset: 0;
-  }
+@keyframes anim {
+  0% { opacity: 1}
+  35% { opacity: 0}
+  70% {opacity: 1} 
+  100% {opacity: 1} 
 }
 
 
