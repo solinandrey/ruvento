@@ -37,7 +37,8 @@
 .topTitle {
   position: relative;
   color: $black;
-  font-family: $circeBold;
+  // font-family: $circeBold;
+  @include robotoMid();
   font-size: 8.68rem;
   width: 50%;
   text-transform: uppercase;
@@ -58,7 +59,8 @@
 .topDesc {
   width: 50%;
   font-size: 2.43rem;
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   max-width: 50rem;
   padding-left: 4rem;
   display: flex;

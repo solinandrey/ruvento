@@ -24,7 +24,8 @@
 }
 
 .title {
-  font-family: $circeBold;
+  // font-family: $circeBold;
+  @include robotoMid();
   font-size: 8.68rem;
   color: $black;
   text-transform: uppercase;
@@ -55,7 +56,8 @@
 
 .newsText {
   width: 86.8rem;
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   color: $black;
   font-size: 2.43rem;
 }

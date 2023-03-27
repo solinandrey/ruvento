@@ -33,7 +33,8 @@
 }
 
 .articleTitle {
-  font-family: $circeExtraBold;
+  // font-family: $circeExtraBold;
+  @include robotoBold();
   font-size: 4.51rem;
   color: $orange;
   text-transform: uppercase;
@@ -54,7 +55,8 @@
 }
 
 .articleDesc {
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   color: $black;
   margin-top: 3.23rem;
   font-size: 2.43rem;

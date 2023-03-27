@@ -18,7 +18,8 @@
 }
 
 .title {
-  font-family: $circeBold;
+  // font-family: $circeBold;
+  @include robotoMid();
   font-size: 3.47rem;
   color: $black;
   width: 58.3rem;
@@ -54,7 +55,8 @@
 .footerNavItem {
   color: $orange;
   font-size: 2.43rem;
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   transition: color 0.2s $transitionFunc;
   &:not(:first-of-type) {
     margin-left: 2.7rem;
@@ -85,6 +87,7 @@
 
 .bottomText {
   font-family: $circe;
+  @include robotoLight();
   color: $black;
   font-size: 2.43rem;
   width: 66rem;

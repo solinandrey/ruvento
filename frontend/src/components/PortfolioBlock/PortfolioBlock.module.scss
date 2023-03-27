@@ -10,7 +10,8 @@
 
 .title {
   color: $grey;
-  font-family: $circeBold;
+  // font-family: $circeBold;
+  @include robotoMid();
   font-size: 9rem;
   text-align: center;
   text-transform: uppercase;

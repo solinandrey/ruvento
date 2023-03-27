@@ -20,6 +20,7 @@
 
 .title {
   font-family: $circeExtraBold;
+  @include robotoBold();
   font-size: 2.43rem;
   text-transform: uppercase;
   .mainPage & {
@@ -37,7 +38,8 @@
 }
 
 .desc {
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   font-size: 2.43rem;
   color: $black;
   margin-top: 0.7rem;

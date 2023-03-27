@@ -19,7 +19,8 @@
 .title {
   color: $orange;
   font-size: 8.68rem;
-  font-family: $circeExtraBold;
+  // font-family: $circeExtraBold;
+  @include robotoBold();
   text-transform: uppercase;
   margin-bottom: 3.5rem;
 }
@@ -40,14 +41,16 @@
 }
 
 .lastCardTitle {
-  font-family: $circeBold;
+  // font-family: $circeBold;
+  @include robotoMid();
   font-size: 4.51rem;
   color: $orange;
   text-transform: uppercase;
 }
 
 .lastCardDescription {
-  font-family: $circe;
+  // font-family: $circe;
+  @include robotoLight();
   font-size: 2.43rem;
   color: $black;
   margin-top: .7rem;
