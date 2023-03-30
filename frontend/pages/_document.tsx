@@ -31,8 +31,8 @@ export default function Document() {
                 setTimeout(() => {
                   document.querySelector('.preloader').classList.add('done');
                   setTimeout(() => {document.querySelector('.preloader').style.display = 'none';}, 500)
-                }, 1000)
-              }, 1500);
+                }, 500)
+              }, 1000);
           };`}
         </Script>
         <div className="preloader">

@@ -36,16 +36,21 @@
 }
 
 .lastCard {
-  width: 24.6rem;
+  width: 60.6rem;
   margin-top: 5.29rem;
+  margin-bottom: 10rem;
 }
 
 .lastCardTitle {
   // font-family: $circeBold;
   @include robotoMid();
   font-size: 4.51rem;
-  color: $orange;
+  color: $black;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: $orange;
+  text-decoration-thickness: 0.21rem;
+  text-underline-offset: 0.6rem;
 }
 
 .lastCardDescription {

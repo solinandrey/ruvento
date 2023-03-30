@@ -10,9 +10,9 @@ import Logo from "@images/logotype.svg";
 const Footer = () => {
   return (
     <div className={styles.footer}>
-      <div className={styles.title}>
+      {/* <div className={styles.title}>
         Building a great Company in Southeast Asia <span>Contact us</span>
-      </div>
+      </div> */}
       <div className={styles.links}>
         <div className={styles.footerNav}>
           <Link
@@ -28,6 +28,9 @@ const Footer = () => {
           <Link href="/team" className={styles.footerNavItem} scroll={false}>
             Team
           </Link>
+          <div className={styles.title}>
+            <span>Contact us</span>
+          </div>
         </div>
         <div className={styles.socialLinks}>
           <Link href="" className={styles.socialLinksItem} target="_blank">

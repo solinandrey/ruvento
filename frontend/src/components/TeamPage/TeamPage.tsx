@@ -38,9 +38,9 @@ const teamMembers = [
 const LastCard = () => {
   return (
     <div className={styles.lastCard}>
-      <div className={styles.lastCardTitle}>Our team will be by your side</div>
+      <div className={styles.lastCardTitle}>sit amet consectetur adipiscing elit sed do eiusmod</div>
       <div className={styles.lastCardDescription}>
-        sit amet, consectetur adipiscing elit, sed do eiusmod{" "}
+        {/* sit amet, consectetur adipiscing elit, sed do eiusmod{" "} */}
       </div>
     </div>
   );
@@ -50,6 +50,7 @@ const TeamPage = () => {
   return (
     <div className={styles.team}>
       <div className={styles.title}>our team</div>
+      <LastCard />
       <div className={styles.cards}>
         {teamMembers.map((item, idx) => {
           return (
@@ -63,7 +64,7 @@ const TeamPage = () => {
             </div>
           );
         })}
-        <LastCard />
+        
       </div>
     </div>
   );
