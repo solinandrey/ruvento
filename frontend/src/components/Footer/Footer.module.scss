@@ -29,7 +29,7 @@
     color: $white;
     font-size: 2.43rem;
     padding: 0.9rem 4.65rem 0.4rem;
-    transform: translateY(-0.7rem);
+    // transform: translateY(-0.7rem);
     background: $orange;
     border-radius: 1.39rem;
     text-transform: uppercase;
@@ -51,6 +51,7 @@
 
 .footerNav {
   display: flex;
+  align-items: center;
 }
 
 .footerNavItem {
@@ -69,6 +70,7 @@
 
 .socialLinks {
   display: flex;
+  transform: translateY(-0.5rem);
 }
 
 .socialLinksItem{
@@ -103,7 +105,7 @@
 
   .title {
     font-size: 5rem;
-    width: 79rem;
+    width: 32rem;
     & span {
       font-size: 3rem;
       transform: translateY(-0.8rem);
