@@ -67,8 +67,14 @@
 
   .logoItem {
     max-height: 5rem;
-    width: 37rem;
+    width: 35rem;
   }
+
+  .logos {
+    padding: 0 $mobileLayoutPadding;
+    margin-top: 6.38rem;
+  }
+  
 }
 
 @media screen and (min-width: $bigScreen) {
