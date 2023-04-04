@@ -15,6 +15,7 @@ import robotics from "@images/robotics.png";
 import arloid from "@images/arloid.png";
 import creopop from "@images/creopop.png";
 import powerdot from "@images/powerdot.png";
+import seeds from "@images/seeds.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -58,6 +59,7 @@ const logos = [
   { logo: arloid, alt: "Arloid", link: "https://arloid.com/" },
   { logo: creopop, alt: "Creopop", link: "https://creopop.com/" },
   { logo: powerdot, alt: "Powerdot", link: "https://www.powerdot.com/" },
+  { logo: seeds, alt: "Seeds", link: "https://seeds.finance/" },
 ];
 
 const PortfolioPage = () => {

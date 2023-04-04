@@ -9,8 +9,6 @@ import Footer from "@src/components/Footer";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { Roboto } from 'next/font/google';
-import useFontFaceObserver from 'use-font-face-observer';
-import FontFaceObserver from 'fontfaceobserver';
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
@@ -37,10 +35,14 @@ const MyApp = ({ Component, pageProps }: any) => {
   }, [fontStyles]);
 
   const firePreloader = () => {
+    const preloader = document.querySelector('.preloader');
     setTimeout(() => {
-      document.querySelector('.preloader')?.classList.add('loaded');
+      preloader?.classList.add('loaded');
       setTimeout(() => {
-        document.querySelector('.preloader')?.classList.add('done');
+        preloader?.classList.add('done');
+        setTimeout(() => {
+          preloader?.remove();
+        }, 200);
       }, 500)
     }, 1000);
   }
