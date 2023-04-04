@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
-import useFontFaceObserver from 'use-font-face-observer';
 import { useEffect } from "react";
 
 export default function Document() {
@@ -30,18 +29,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script strategy="afterInteractive" id="preloaderScript">
-          {/* {`document.fonts.onloadingdone = () => { 
-              setTimeout(() => {
-                document.querySelector('.preloader').classList.add('loaded');
-                console.log('heellllloo');
-                setTimeout(() => {
-                  document.querySelector('.preloader').classList.add('done');
-                  setTimeout(() => {document.querySelector('.preloader').style.display = 'none';}, 500)
-                }, 500)
-              }, 1000);
-          };`} */}
-        </Script>
+
         <div className="preloader">
           <svg
             xmlns="http://www.w3.org/2000/svg"
