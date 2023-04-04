@@ -9,12 +9,42 @@ import Footer from "@src/components/Footer";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { Roboto } from 'next/font/google';
+import useFontFaceObserver from 'use-font-face-observer';
+import FontFaceObserver from 'fontfaceobserver';
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
   // const { global } = pageProps;
   const router = useRouter();
+  const [loaded, setLoaded] = useState(false);
+
+  const fontStyles = `
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+  `;
+
+  useEffect(() => {
+    const styleTag = document.createElement('style');
+    styleTag.appendChild(document.createTextNode(fontStyles));
+    styleTag.addEventListener('load', () => {
+      setLoaded(true);
+      firePreloader();
+    });
+    document.head.appendChild(styleTag);
+  }, [fontStyles]);
+
+  const firePreloader = () => {
+    setTimeout(() => {
+      document.querySelector('.preloader')?.classList.add('loaded');
+      setTimeout(() => {
+        document.querySelector('.preloader')?.classList.add('done');
+      }, 500)
+    }, 1000);
+  }
+
 
   return (
     <>
@@ -25,6 +55,7 @@ const MyApp = ({ Component, pageProps }: any) => {
         /> */}
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
+
       <Header />
 
       <AnimatePresence

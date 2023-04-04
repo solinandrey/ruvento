@@ -1,7 +1,13 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
+import useFontFaceObserver from 'use-font-face-observer';
+import { useEffect } from "react";
 
 export default function Document() {
+
+
+  
+
   return (
     <Html lang="en">
       <Head>
@@ -11,7 +17,7 @@ export default function Document() {
           href="https://fonts.gstatic.com"
           crossOrigin=""
         />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="preload"
           as="style"
@@ -19,21 +25,22 @@ export default function Document() {
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet"
-        />
+        /> */}
       </Head>
       <body>
         <Main />
         <NextScript />
         <Script strategy="afterInteractive" id="preloaderScript">
-          {`document.fonts.onloadingdone = () => { 
+          {/* {`document.fonts.onloadingdone = () => { 
               setTimeout(() => {
                 document.querySelector('.preloader').classList.add('loaded');
+                console.log('heellllloo');
                 setTimeout(() => {
                   document.querySelector('.preloader').classList.add('done');
                   setTimeout(() => {document.querySelector('.preloader').style.display = 'none';}, 500)
                 }, 500)
               }, 1000);
-          };`}
+          };`} */}
         </Script>
         <div className="preloader">
           <svg
