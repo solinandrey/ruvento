@@ -29,6 +29,7 @@ export default function Home({ articles }: any) {
 export async function getStaticProps() {
   console.log("i am on the server");
   // const articles =  await fetchAPI('/articles')
+  // console.log(articles);
 
   return {
     props: {

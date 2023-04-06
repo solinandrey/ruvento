@@ -1,21 +1,33 @@
 import Link from "next/link";
 import styles from "./TitleBlock.module.scss";
-import ArrowRight from '@images/arrow-right.svg'
+import ArrowRight from "@images/arrow-right.svg";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const TitleBlock = () => {
+  // useEffect(() => {
+  //   fetch("https://lobster-app-iw9uv.ondigitalocean.app/api/articles").then(
+  //     (res) => res.json()
+  //   ).then(data => console.log(data, 'data'));
+  // }, []);
   return (
     <div className={styles.titleBlock}>
       <div className={styles.titleContent}>
         <div className={styles.upperRow}>
           <div className={`${styles.upperRowTitle} ${styles.title}`}>
-          TECHNOLOGIES 
+            TECHNOLOGIES
           </div>
         </div>
         <div className={styles.lowerRow}>
-          <div className={`${styles.lowerRowTitle} ${styles.title}`}>POWERED<br/>BY VALUES</div>
+          <div className={`${styles.lowerRowTitle} ${styles.title}`}>
+            POWERED
+            <br />
+            BY VALUES
+          </div>
           <div className={styles.lowerRowDescription}>
-          Empowering founders<br/>to advance Southeast Asia through tech
+            Empowering founders
+            <br />
+            to advance Southeast Asia through tech
           </div>
         </div>
         {/* <Link className={styles.link} href="/blog">
