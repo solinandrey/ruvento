@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_portfolio_arrays",
+  "info": {
+    "displayName": "Portfolio array",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}

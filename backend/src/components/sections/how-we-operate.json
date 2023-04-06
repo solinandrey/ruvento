@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_how_we_operates",
+  "info": {
+    "displayName": "how we operate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "imageWithDescription": {
+      "displayName": "imageWithDescription",
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.image-with-description"
+    },
+    "footerDescription": {
+      "type": "text"
+    }
+  }
+}

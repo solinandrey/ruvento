@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_image_with_descriptions",
+  "info": {
+    "displayName": "imageWithDescription",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
