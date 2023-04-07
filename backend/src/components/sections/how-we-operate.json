@@ -17,9 +17,6 @@
       "type": "component",
       "repeatable": true,
       "component": "sections.image-with-description"
-    },
-    "footerDescription": {
-      "type": "text"
     }
   }
 }

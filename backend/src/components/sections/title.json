@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_titles",
+  "info": {
+    "displayName": "title",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titleRow1": {
+      "type": "string"
+    },
+    "titleRow2": {
+      "type": "string"
+    },
+    "titleRow3": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

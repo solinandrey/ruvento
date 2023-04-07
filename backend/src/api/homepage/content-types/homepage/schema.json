@@ -19,12 +19,6 @@
       "repeatable": false,
       "component": "shared.seo"
     },
-    "MainTitle": {
-      "type": "string"
-    },
-    "MainDescription": {
-      "type": "string"
-    },
     "Portfolio": {
       "displayName": "Portfolio array",
       "type": "component",
@@ -36,6 +30,12 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.how-we-operate"
+    },
+    "title": {
+      "displayName": "title",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.title"
     }
   }
 }
