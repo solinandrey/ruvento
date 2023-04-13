@@ -14,13 +14,10 @@ const ArticlePage = ({ article }: any) => {
       <div className={styles.article}>
         <div className={styles.title}>{article.title}</div>
         <div className={styles.content}>
-          {// eslint-disable-next-line
-          }
           <ReactMarkdown
-            children={article.content}
             remarkPlugins={[remarkGfm, [remarkImages, { exclude: "external" }]]}
             transformImageUri={(uri) => urlBuilder(uri)}
-          />
+          >{article.content}</ReactMarkdown>
         </div>
       </div>
     </Layout>
