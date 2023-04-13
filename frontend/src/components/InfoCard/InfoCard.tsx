@@ -24,6 +24,7 @@ const InfoCard = ({
       className={`${styles.card} ${mainPage ? styles.mainPage : ""}`}
       href={link}
       target="_blank"
+      rel="noreferrer"
     >
       {topTitle && (
         <div className={`${styles.title} ${styles.topTitle}`}>{title}</div>
