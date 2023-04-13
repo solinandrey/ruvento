@@ -1,11 +1,13 @@
 import dynamic from 'next/dynamic';
-const TeamPage = dynamic(() => import('@components/TeamPage'));
-const Layout = dynamic(() => import('@src/components/Layout'));
+import { fetchAPI } from 'lib/api';
+import TeamPage from '@components/TeamPage';
+import Layout from '@src/components/Layout';
 
-const Team = () => {
+
+const Team = ({title, teammates, subtitle}: any) => {
   return (
     <Layout>
-      <TeamPage />
+      <TeamPage title={title} teammates={teammates} subtitle={subtitle}/>
     </Layout>
   );
 };
@@ -13,7 +15,20 @@ const Team = () => {
 export default Team;
 
 export async function getStaticProps() {
+  const res = await fetchAPI(
+    `/team`,
+    {
+      populate: 'deep',
+    }
+  );
+  console.log(res.data.attributes, "data porti");
   return {
-    props: {},
+    props: {
+      teammates: res.data.attributes.teammate,
+      title: res.data.attributes.title,
+      subtitle: res.data.attributes.description
+    },
+
+    revalidate: 60,
   };
 }

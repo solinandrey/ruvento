@@ -3,15 +3,25 @@ import TitleBlock from "@components/TitleBlock";
 import PortfolioBlock from "@components/PortfolioBlock";
 import OperateBlock from "@components/OperateBlock";
 import LatestNews from "../LatestNews";
+import { useEffect } from "react";
 
-const MainPage = () => {
+const MainPage = ({ page }: any) => {
   return (
     <div className="main-page">
       <div className={styles.firstScreen}>
-        <TitleBlock />
-        <PortfolioBlock />
+        <TitleBlock
+          titleRow1={page.title.titleRow1}
+          titleRow2={page.title.titleRow2}
+          titleRow3={page.title.titleRow3}
+          description={page.title.description}
+        />
+        <PortfolioBlock companies={page.Portfolio}/>
       </div>
-      <OperateBlock />
+      <OperateBlock
+        title={page.howWeOperate.title}
+        description={page.howWeOperate.description}
+        imageWithDescription={page.howWeOperate.imageWithDescription}
+      />
       {/* <LatestNews /> */}
     </div>
   );

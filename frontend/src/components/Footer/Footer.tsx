@@ -7,7 +7,11 @@ import InstagramLogo from "@images/instagram.svg";
 import FbLogo from "@images/fb.svg";
 import Logo from "@images/logotype.svg";
 
-const Footer = () => {
+interface Props {
+  description: string
+}
+
+const Footer = ({description}: Props) => {
   return (
     <div className={styles.footer}>
       {/* <div className={styles.title}>
@@ -46,8 +50,7 @@ const Footer = () => {
       </div>
       <div className={styles.bottomRow}>
         <div className={styles.bottomText}>
-          sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
+          {description}
         </div>
         <div className={styles.bottomLogo}>
           <Logo />

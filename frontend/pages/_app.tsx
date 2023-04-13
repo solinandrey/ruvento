@@ -2,7 +2,7 @@ import App from "next/app";
 import Head from "next/head";
 import "../styles/global.scss";
 import { createContext, useEffect, useState } from "react";
-// import { fetchAPI } from "../lib/api";
+import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from "../lib/media";
 import Header from "@src/components/Header";
 import Footer from "@src/components/Footer";
@@ -13,7 +13,7 @@ import { Roboto } from 'next/font/google';
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
-  // const { global } = pageProps;
+  const { global } = pageProps;
   const router = useRouter();
   const [loaded, setLoaded] = useState(false);
 
@@ -23,6 +23,10 @@ const MyApp = ({ Component, pageProps }: any) => {
       font-family: "Roboto", sans-serif;
     }
   `;
+
+  useEffect(() => {
+    console.log(global, 'global')
+  }, [])
 
   useEffect(() => {
     const styleTag = document.createElement('style');
@@ -71,12 +75,12 @@ const MyApp = ({ Component, pageProps }: any) => {
       >
         {/* <Component {...pageProps} /> */}
         <div className="page-container" key={router.asPath}>
-          <Component />
+          <Component {...pageProps} />
         </div>
         {/* </GlobalContext.Provider> */}
       </AnimatePresence>
 
-      <Footer />
+      <Footer description={global?.attributes?.footer || ''}/>
     </>
   );
 };
@@ -87,19 +91,19 @@ const MyApp = ({ Component, pageProps }: any) => {
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getInitialProps = async (ctx: any) => {
   // // Calls page's `getInitialProps` and fills `appProps.pageProps`
-  // const appProps = await App.getInitialProps(ctx);
+  const appProps = await App.getInitialProps(ctx);
   // // Fetch global site settings from Strapi
-  // const globalRes = await fetchAPI("/global", {
-  //   populate: {
-  //     favicon: "*",
-  //     defaultSeo: {
-  //       populate: "*",
-  //     },
-  //   },
-  // });
+  const globalRes = await fetchAPI("/global", {
+    populate: {
+      favicon: "*",
+      defaultSeo: {
+        populate: "*",
+      },
+    },
+  });
   // Pass the data to our page via props
-  // return { ...appProps, pageProps: { global: globalRes.data } };
-  return {};
+  return { ...appProps, pageProps: { global: globalRes.data } };
+  // return {};
 };
 
 export default MyApp;

@@ -1,11 +1,11 @@
-import dynamic from 'next/dynamic';
-const BlogPage = dynamic(() => import('@components/BlogPage'));
-const Layout = dynamic(() => import('@src/components/Layout'));
+import BlogPage from '@components/BlogPage';
+import Layout from '@src/components/Layout';
+import { fetchAPI } from 'lib/api';
 
-const Blog = () => {
+const Blog = ({articles}: any) => {
   return (
     <Layout>
-      <BlogPage />
+      <BlogPage articles={articles}/>
     </Layout>
   );
 };
@@ -13,7 +13,17 @@ const Blog = () => {
 export default Blog;
 
 export async function getStaticProps() {
+  const res = await fetchAPI(
+    `/blog`,
+    {
+      populate: 'deep',
+    }
+  );
   return {
-    props: {},
+    props: {
+      articles: res.data.attributes.articles.data
+    },
+
+    revalidate: 60,
   };
 }

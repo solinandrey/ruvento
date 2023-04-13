@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import styles from "./BlogPage.module.scss";
 import testImage from "@images/test.png";
+import { urlBuilder } from "@src/mixins";
 
 const articles = [
   {
@@ -41,19 +42,48 @@ const articles = [
   },
 ];
 
-const BlogPage = () => {
+interface Props {
+  articles: {
+    id: number;
+    attributes: {
+      title: string;
+      description: string;
+      slug: string;
+      image: { data: { attributes: { url: string } } };
+    };
+  }[];
+}
+
+const BlogPage = ({ articles }: Props) => {
   return (
     <div className={styles.blog}>
       <div className={styles.articles}>
         {articles.map((item, idx) => {
           return (
-            <Link href={`/blog${item.link}`} className={styles.articleItem} key={`article-${idx}`}>
+            <Link
+              href={`/blog/${item.attributes.slug}`}
+              className={styles.articleItem}
+              key={`article-${item.id}`}
+            >
               <div className={styles.articleImage}>
-                <Image alt={item.title} src={item.image} />
+                {item.attributes.image?.data?.attributes.url && (
+                  <Image
+                    width="500"
+                    height="500"
+                    alt={item.attributes.slug}
+                    src={urlBuilder(
+                      item.attributes.image?.data?.attributes.url
+                    )}
+                  />
+                )}
               </div>
               <div className={styles.articleText}>
-                <div className={styles.articleTitle}>{item.title}</div>
-                <div className={styles.articleDesc}>{item.description}</div>
+                <div className={styles.articleTitle}>
+                  {item.attributes.title}
+                </div>
+                <div className={styles.articleDesc}>
+                  {item.attributes.description}
+                </div>
               </div>
             </Link>
           );

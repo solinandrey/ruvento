@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 import styles from "./PortfolioBlock.module.scss";
+import { urlBuilder } from "@src/mixins";
 import mighty from "@images/mighty.png";
 import pointOne from "@images/pointone.png";
 import prenav from "@images/prenav.png";
@@ -21,9 +22,8 @@ import creopop from "@images/creopop.png";
 import powerdot from "@images/powerdot.png";
 
 interface CompanyLogo {
-  logo: StaticImageData;
-  alt: string;
-  link?: string;
+  Logo: { data: { attributes: { url: string } } };
+  Link?: string;
 }
 
 // const companies: CompanyLogo[] = [
@@ -37,31 +37,35 @@ interface CompanyLogo {
 //   { logo: vantageRobotics, alt: "Vantage Robotics" },
 // ];
 
-const companies: CompanyLogo[] = [
-  { logo: refocus, alt: "Refocus", link: "https://refocus.me/" },
-  { logo: boom, alt: "Boom", link: "https://boomsupersonic.com/" },
-  { logo: solugen, alt: "Solugen", link: "https://solugen.com/" },
-  { logo: eightSleep, alt: "Eight Sleep", link: "https://www.eightsleep.com/" },
-  {
-    logo: mighty,
-    alt: "Mighty Buildings",
-    link: "https://www.mightybuildings.com/",
-  },
-  { logo: alcatraz, alt: "Alcatraz AI", link: "https://www.alcatraz.ai/" },
-  { logo: swat, alt: "Swat", link: "https://www.swatmobility.com/" },
-  { logo: elctroneek, alt: "Electroneek", link: "https://electroneek.com/" },
-  { logo: pointOne, alt: "Point One", link: "https://pointonenav.com/" },
-  { logo: reverie, alt: "Reverie Labs", link: "https://www.reverielabs.com/" },
-  { logo: revl, alt: "Revl", link: "https://revl.com/" },
-  { logo: robotics, alt: "Robotics", link: "https://xrobotics.io/" },
-  { logo: prenav, alt: "Prenav", link: "https://www.prenav.com/" },
-  { logo: arloid, alt: "Arloid", link: "https://arloid.com/" },
-  { logo: creopop, alt: "Creopop", link: "https://creopop.com/" },
-  { logo: powerdot, alt: "Powerdot", link: "https://www.powerdot.com/" },
-];
+// const companies: CompanyLogo[] = [
+//   { logo: refocus, alt: "Refocus", link: "https://refocus.me/" },
+//   { logo: boom, alt: "Boom", link: "https://boomsupersonic.com/" },
+//   { logo: solugen, alt: "Solugen", link: "https://solugen.com/" },
+//   { logo: eightSleep, alt: "Eight Sleep", link: "https://www.eightsleep.com/" },
+//   {
+//     logo: mighty,
+//     alt: "Mighty Buildings",
+//     link: "https://www.mightybuildings.com/",
+//   },
+//   { logo: alcatraz, alt: "Alcatraz AI", link: "https://www.alcatraz.ai/" },
+//   { logo: swat, alt: "Swat", link: "https://www.swatmobility.com/" },
+//   { logo: elctroneek, alt: "Electroneek", link: "https://electroneek.com/" },
+//   { logo: pointOne, alt: "Point One", link: "https://pointonenav.com/" },
+//   { logo: reverie, alt: "Reverie Labs", link: "https://www.reverielabs.com/" },
+//   { logo: revl, alt: "Revl", link: "https://revl.com/" },
+//   { logo: robotics, alt: "Robotics", link: "https://xrobotics.io/" },
+//   { logo: prenav, alt: "Prenav", link: "https://www.prenav.com/" },
+//   { logo: arloid, alt: "Arloid", link: "https://arloid.com/" },
+//   { logo: creopop, alt: "Creopop", link: "https://creopop.com/" },
+//   { logo: powerdot, alt: "Powerdot", link: "https://www.powerdot.com/" },
+// ];
 
-const PortfolioBlock = () => {
-  const getCompaniesRow = (arr: CompanyLogo[], row: "up" | "down") => {
+interface Props {
+  companies: CompanyLogo[];
+}
+
+const PortfolioBlock = ({ companies }: Props) => {
+  const getCompaniesRow = (arr: CompanyLogo[], row: "up" | "down"): CompanyLogo[] => {
     return row === "up"
       ? [...doubleArray(doubleArray(arr.slice(0, Math.round(arr.length / 2))))]
       : [...doubleArray(doubleArray(arr.slice(Math.round(arr.length / 2))))];
@@ -84,13 +88,13 @@ const PortfolioBlock = () => {
                     (item, idx) => {
                       return (
                         <a
-                          href={item.link}
+                          href={item.Link}
                           target="_blank"
                           className={styles.logoItem}
-                          key={item.alt + idx}
+                          key={(item.Link || '') + idx + i}
                           rel="noreferrer"
                         >
-                          <Image src={item.logo} alt={item.alt} />
+                          <Image src={urlBuilder(item.Logo.data.attributes.url)} alt={item.Link || ''} width="500" height="500"/>
                         </a>
                       );
                     }

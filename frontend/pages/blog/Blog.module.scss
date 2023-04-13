@@ -1,0 +1,32 @@
+.article {
+  margin-top: 7.29rem;
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+}
+
+@media screen and (min-width: $bigScreen) {
+  .article {
+    padding: 0 $bigScreenLayoutPadding;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+  .article {
+    padding: 0 $mobileLayoutPadding;
+  }
+}
+
+.content {
+  font-size: 2rem;
+  @include robotoLight();
+}
+
+.title {
+  color: $orange;
+  font-size: 5.68rem;
+  // font-family: $circeExtraBold;
+  @include robotoBold();
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+  margin-top: 5rem;
+}

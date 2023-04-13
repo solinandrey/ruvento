@@ -35,10 +35,22 @@ const teamMembers = [
   },
 ];
 
-const LastCard = () => {
+interface Props {
+  title: string;
+  subtitle: string;
+  teammates: {
+    id: number;
+    name: string;
+    link: string;
+    avatar: {data: {attributes:{url: string}}};
+    description: string;
+  }[];
+}
+
+const LastCard = ({ subtitle }: { subtitle: string }) => {
   return (
     <div className={styles.lastCard}>
-      <div className={styles.lastCardTitle}>sit amet consectetur adipiscing elit sed do eiusmod</div>
+      <div className={styles.lastCardTitle}>{subtitle}</div>
       <div className={styles.lastCardDescription}>
         {/* sit amet, consectetur adipiscing elit, sed do eiusmod{" "} */}
       </div>
@@ -46,25 +58,25 @@ const LastCard = () => {
   );
 };
 
-const TeamPage = () => {
+const TeamPage = ({ title, subtitle, teammates }: Props) => {
   return (
     <div className={styles.team}>
-      <div className={styles.title}>our team</div>
-      <LastCard />
+      <div className={styles.title}>{title}</div>
+      <LastCard subtitle={subtitle} />
       <div className={styles.cards}>
-        {teamMembers.map((item, idx) => {
+        {teammates.map((item, idx) => {
           return (
-            <div className={styles.cardsItem} key={`teammate-${idx}`}>
+            <div className={styles.cardsItem} key={`teammate-${item.id}`}>
               <InfoCard
-                title={item.title}
+                title={item.name}
                 topTitle
-                image={item.image}
+                image={item.avatar.data.attributes.url}
                 description={item.description}
+                link={item.link}
               />
             </div>
           );
         })}
-        
       </div>
     </div>
   );

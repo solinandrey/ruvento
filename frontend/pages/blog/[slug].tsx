@@ -1,19 +1,44 @@
-import dynamic from 'next/dynamic';
-const Layout = dynamic(() => import('@src/components/Layout'));
+import Layout from "@src/components/Layout";
+import { fetchAPI } from "lib/api";
+import ReactMarkdown from "react-markdown";
+import styles from "./Blog.module.scss";
+import { urlBuilder } from "@src/mixins";
+import Image from "next/image";
+import remarkGfm from "remark-gfm";
+import remarkImages from "remark-images";
 
-const ArticlePage = () => {
+const ArticlePage = ({ article }: any) => {
+
   return (
     <Layout>
-      <div className="articlePage">Article Page</div>
+      <div className={styles.article}>
+        <div className={styles.title}>{article.title}</div>
+        <div className={styles.content}>
+          <ReactMarkdown
+            children={article.content}
+            remarkPlugins={[remarkGfm, [remarkImages, { exclude: "external" }]]}
+            transformImageUri={(uri) => urlBuilder(uri)}
+          />
+        </div>
+      </div>
     </Layout>
   );
 };
 
 export default ArticlePage;
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }: any) {
+  const res = await fetchAPI(`/articles/${params.slug}`, {
+    populate: "deep",
+  });
+
+  console.log(params.slug, res, "res");
   return {
-    props: {},
+    props: {
+      article: res.data.attributes,
+    },
+
+    revalidate: 60,
   };
 }
 

@@ -19,6 +19,10 @@ import seeds from "@images/seeds.png";
 import Image from "next/image";
 import Link from "next/link";
 
+import { fetchAPI } from "lib/api";
+import { useEffect } from "react";
+import { urlBuilder } from "@src/mixins";
+
 // const logos = [
 //   { logo: mighty, link: "/", alt: "Mighty Buildings" },
 //   { logo: pointOne, link: "/", alt: "Point One" },
@@ -62,28 +66,38 @@ const logos = [
   { logo: seeds, alt: "Seeds", link: "https://seeds.finance/" },
 ];
 
-const PortfolioPage = () => {
+interface Props {
+  title: string;
+  partners: {
+    Link: string;
+    Logo: { data: { attributes: { url: string } } };
+    id: number;
+  }[];
+}
+
+const PortfolioPage = ({ partners, title }: Props) => {
   return (
     <div className={styles.portfolio}>
       <div className={styles.title}>
-        WE INVEST IN DISRUPTIV
-        <br />
-        TECHNOLOGIES AND
-        <br />
-        REMARKABLE FOUNDERS
+        {title}
       </div>
       <div className={styles.logos}>
         <div className={styles.logosContainer}>
-          {logos.map((item, idx) => {
+          {partners?.map((item, idx) => {
             return (
               <Link
                 className={styles.logoItem}
-                key={item.alt + idx}
-                href={item.link}
+                key={item.id + idx}
+                href={item.Link}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Image src={item.logo} alt={item.alt} />
+                <Image
+                  src={urlBuilder(item.Logo.data.attributes.url)}
+                  alt={item.Link}
+                  width="500"
+                  height="500"
+                />
               </Link>
             );
           })}

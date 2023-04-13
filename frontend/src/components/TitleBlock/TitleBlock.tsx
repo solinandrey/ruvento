@@ -4,7 +4,19 @@ import ArrowRight from "@images/arrow-right.svg";
 import Image from "next/image";
 import { useEffect } from "react";
 
-const TitleBlock = () => {
+interface Props {
+  titleRow1: string;
+  titleRow2: string;
+  titleRow3: string;
+  description: string;
+}
+
+const TitleBlock = ({
+  titleRow1,
+  titleRow2,
+  titleRow3,
+  description,
+}: Props) => {
   // useEffect(() => {
   //   fetch("https://lobster-app-iw9uv.ondigitalocean.app/api/articles").then(
   //     (res) => res.json()
@@ -15,19 +27,17 @@ const TitleBlock = () => {
       <div className={styles.titleContent}>
         <div className={styles.upperRow}>
           <div className={`${styles.upperRowTitle} ${styles.title}`}>
-            TECHNOLOGIES
+            {titleRow1}
           </div>
         </div>
         <div className={styles.lowerRow}>
           <div className={`${styles.lowerRowTitle} ${styles.title}`}>
-            POWERED
+            {titleRow2}
             <br />
-            BY VALUES
+            {titleRow3}
           </div>
           <div className={styles.lowerRowDescription}>
-            Empowering founders
-            <br />
-            to advance Southeast Asia through tech
+            {description}
           </div>
         </div>
         {/* <Link className={styles.link} href="/blog">

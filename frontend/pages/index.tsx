@@ -1,14 +1,17 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { fetchAPI } from "../lib/api";
+import { useEffect } from "react";
+import MainPage from "@components/MainPage";
+import Layout from "@src/components/Layout";
 
 import dynamic from 'next/dynamic';
-const MainPage = dynamic(() => import('@components/MainPage'));
-const Layout = dynamic(() => import('@src/components/Layout'));
 
-const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ articles }: any) {
+export default function Home({ page }: any) {
+  useEffect(() => {
+    console.log(page, 'page')
+  }, [page])
   return (
     <>
       <Head>
@@ -18,7 +21,7 @@ export default function Home({ articles }: any) {
       </Head>
       <main>
         <Layout>
-          <MainPage />
+          <MainPage page={page}/>
         </Layout>
         {/* {articles.map((item:any) => <div>{item.attributes.title}</div>)} */}
       </main>
@@ -27,13 +30,17 @@ export default function Home({ articles }: any) {
 }
 
 export async function getStaticProps() {
-  console.log("i am on the server");
-  // const articles =  await fetchAPI('/articles')
-  // console.log(articles);
 
+  const {NEXT_PUBLIC_STRAPI_API_URL} = process.env;
+  // const res = await fetch(`${NEXT_PUBLIC_STRAPI_API_URL}/api/homepage`);
+  const res = await fetch(`http://localhost:1337/api/homepage?populate=deep`);
+  const data = await res.json();
+  console.log(data.data.attributes, 'data')
   return {
     props: {
-      // articles: articles.data
+      page: data.data.attributes,
     },
-  };
+
+    revalidate: 60
+  }
 }

@@ -28,11 +28,13 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   row-gap: 3.33rem;
+  column-gap: 5rem;
 }
 
 .cardsItem {
+  width: 25rem;
 }
 
 .lastCard {
