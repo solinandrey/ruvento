@@ -7,7 +7,7 @@ const Layout = dynamic(() => import('@src/components/Layout'));
 const Portfolio = ({partners, title}: any) => {
   return (
     <Layout>
-      <PortfolioPage partners={partners} title={title}/>
+      {partners && title && <PortfolioPage partners={partners} title={title}/>}
     </Layout>
   );
 };
@@ -24,8 +24,8 @@ export async function getStaticProps() {
   console.log(res.data.attributes, "data porti");
   return {
     props: {
-      partners: res.data.attributes.partners.data[0].attributes.partners,
-      title: res.data.attributes.title
+      partners: res?.data?.attributes?.partners?.data[0]?.attributes?.partners || [],
+      title: res?.data?.attributes.title || ''
     },
 
     revalidate: 60,

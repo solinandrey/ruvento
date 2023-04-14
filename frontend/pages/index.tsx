@@ -31,14 +31,16 @@ export default function Home({ page }: any) {
 
 export async function getStaticProps() {
 
-  const {NEXT_PUBLIC_STRAPI_API_URL} = process.env;
-  // const res = await fetch(`${NEXT_PUBLIC_STRAPI_API_URL}/api/homepage`);
-  const res = await fetch(`http://localhost:1337/api/homepage?populate=deep`);
-  const data = await res.json();
-  console.log(data.data.attributes, 'data')
+  const res = await fetchAPI(
+    `/homepage`,
+    {
+      populate: 'deep',
+    }
+  );
+  // console.log(data.data.attributes, 'data')
   return {
     props: {
-      page: data.data.attributes,
+      page: res?.data?.attributes || {},
     },
 
     revalidate: 60

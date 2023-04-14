@@ -65,7 +65,10 @@ interface Props {
 }
 
 const PortfolioBlock = ({ companies }: Props) => {
-  const getCompaniesRow = (arr: CompanyLogo[], row: "up" | "down"): CompanyLogo[] => {
+  const getCompaniesRow = (
+    arr: CompanyLogo[],
+    row: "up" | "down"
+  ): CompanyLogo[] => {
     return row === "up"
       ? [...doubleArray(doubleArray(arr.slice(0, Math.round(arr.length / 2))))]
       : [...doubleArray(doubleArray(arr.slice(Math.round(arr.length / 2))))];
@@ -79,31 +82,38 @@ const PortfolioBlock = ({ companies }: Props) => {
     <div className={styles.portfolioBlock}>
       <div className={styles.container}>
         <div className={styles.title}>our portfolio</div>
-        <div className={styles.logos}>
-          {["up", "down"].map((part) => (
-            <div className={`${styles.logoRow} ${styles[part]}`} key={part}>
-              {[1, 2].map((_, i) => (
-                <div className={styles.runnigRow} key={`dup${part}${i}`}>
-                  {getCompaniesRow(companies, part as "up" | "down").map(
-                    (item, idx) => {
-                      return (
-                        <a
-                          href={item.Link}
-                          target="_blank"
-                          className={styles.logoItem}
-                          key={(item.Link || '') + idx + i}
-                          rel="noreferrer"
-                        >
-                          <Image src={urlBuilder(item.Logo.data.attributes.url)} alt={item.Link || ''} width="500" height="500"/>
-                        </a>
-                      );
-                    }
-                  )}
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+        {companies && companies.length && (
+          <div className={styles.logos}>
+            {["up", "down"].map((part) => (
+              <div className={`${styles.logoRow} ${styles[part]}`} key={part}>
+                {[1, 2].map((_, i) => (
+                  <div className={styles.runnigRow} key={`dup${part}${i}`}>
+                    {getCompaniesRow(companies, part as "up" | "down").map(
+                      (item, idx) => {
+                        return (
+                          <a
+                            href={item.Link}
+                            target="_blank"
+                            className={styles.logoItem}
+                            key={(item.Link || "") + idx + i}
+                            rel="noreferrer"
+                          >
+                            <Image
+                              src={urlBuilder(item.Logo.data.attributes.url)}
+                              alt={item.Link || ""}
+                              width="500"
+                              height="500"
+                            />
+                          </a>
+                        );
+                      }
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

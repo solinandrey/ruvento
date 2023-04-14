@@ -7,7 +7,7 @@ import Layout from '@src/components/Layout';
 const Team = ({title, teammates, subtitle}: any) => {
   return (
     <Layout>
-      <TeamPage title={title} teammates={teammates} subtitle={subtitle}/>
+      {teammates && teammates.length && <TeamPage title={title} teammates={teammates} subtitle={subtitle}/>}
     </Layout>
   );
 };
@@ -24,9 +24,9 @@ export async function getStaticProps() {
   console.log(res.data.attributes, "data porti");
   return {
     props: {
-      teammates: res.data.attributes.teammate,
-      title: res.data.attributes.title,
-      subtitle: res.data.attributes.description
+      teammates: res?.data?.attributes?.teammate || [],
+      title: res?.data?.attributes?.title || '',
+      subtitle: res?.data?.attributes?.description || ''
     },
 
     revalidate: 60,

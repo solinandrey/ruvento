@@ -5,7 +5,7 @@ import { fetchAPI } from 'lib/api';
 const Blog = ({articles}: any) => {
   return (
     <Layout>
-      <BlogPage articles={articles}/>
+      {articles && articles.length && <BlogPage articles={articles}/>}
     </Layout>
   );
 };
@@ -21,7 +21,7 @@ export async function getStaticProps() {
   );
   return {
     props: {
-      articles: res.data.attributes.articles.data
+      articles: res?.data?.attributes?.articles?.data || []
     },
 
     revalidate: 60,

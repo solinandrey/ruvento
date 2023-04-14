@@ -10,17 +10,17 @@ const MainPage = ({ page }: any) => {
     <div className="main-page">
       <div className={styles.firstScreen}>
         <TitleBlock
-          titleRow1={page.title.titleRow1}
-          titleRow2={page.title.titleRow2}
-          titleRow3={page.title.titleRow3}
-          description={page.title.description}
+          titleRow1={page?.title?.titleRow1 || ''}
+          titleRow2={page?.title?.titleRow2 || ''}
+          titleRow3={page?.title?.titleRow3 || ''}
+          description={page?.title?.description || ''}
         />
-        <PortfolioBlock companies={page.Portfolio}/>
+        <PortfolioBlock companies={page?.Portfolio || {}}/>
       </div>
       <OperateBlock
-        title={page.howWeOperate.title}
-        description={page.howWeOperate.description}
-        imageWithDescription={page.howWeOperate.imageWithDescription}
+        title={page?.howWeOperate?.title || ''}
+        description={page?.howWeOperate?.description || ''}
+        imageWithDescription={page?.howWeOperate?.imageWithDescription || ''}
       />
       {/* <LatestNews /> */}
     </div>

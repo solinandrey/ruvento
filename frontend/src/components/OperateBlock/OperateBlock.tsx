@@ -46,17 +46,19 @@ const OperateBlock = ({ title, description, imageWithDescription }: Props) => {
           <div className={styles.topDesc}>{description}</div>
         </div>
         <div className={styles.cards}>
-          {imageWithDescription.map((card, idx) => {
-            return (
-              <InfoCard
-                key={`card${idx}`}
-                image={card?.image?.data?.attributes?.url || ""}
-                title={card.title}
-                description={card.description}
-                mainPage
-              />
-            );
-          })}
+          {imageWithDescription &&
+            imageWithDescription.length &&
+            imageWithDescription.map((card, idx) => {
+              return (
+                <InfoCard
+                  key={`card${idx}`}
+                  image={card?.image?.data?.attributes?.url || ""}
+                  title={card.title}
+                  description={card.description}
+                  mainPage
+                />
+              );
+            })}
         </div>
       </div>
     </div>
