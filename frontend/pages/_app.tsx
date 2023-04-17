@@ -9,6 +9,7 @@ import Footer from "@src/components/Footer";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { Roboto } from 'next/font/google';
+import { urlBuilder } from "@src/mixins";
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
@@ -55,10 +56,25 @@ const MyApp = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
-        {/* <link
+        <link
           rel="shortcut icon"
-          href={getStrapiMedia(global.attributes.favicon)}
-        /> */}
+          href={urlBuilder(global.attributes.favicon)}
+        />
+        <title>{global?.attributes?.siteName}</title>
+        <meta
+          name="description"
+          content={global?.attributes?.deafultSeo?.metaDescription}
+          key="desc"
+        />
+        <meta property="og:title" content={global?.attributes?.deafultSeo?.metaTitle} />
+        <meta
+          property="og:description"
+          content={global?.attributes?.deafultSeo?.metaDescription}
+        />
+        <meta
+          property="og:image"
+          content={urlBuilder(global?.attributes?.deafultSeo?.shareImage?.data?.attributes?.url)}
+        />
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
 
