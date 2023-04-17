@@ -31,10 +31,9 @@ export async function getStaticProps({ params }: any) {
     populate: "deep",
   });
 
-  console.log(params.slug, res, "res");
   return {
     props: {
-      article: res.data.attributes,
+      article: res?.data?.attributes,
     },
 
     revalidate: 60,

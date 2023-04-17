@@ -66,23 +66,23 @@ const BlogPage = ({ articles }: Props) => {
               key={`article-${item.id}`}
             >
               <div className={styles.articleImage}>
-                {item.attributes.image?.data?.attributes.url && (
+                {item?.attributes?.image?.data?.attributes.url && (
                   <Image
                     width="500"
                     height="500"
-                    alt={item.attributes.slug}
+                    alt={item?.attributes.slug}
                     src={urlBuilder(
-                      item.attributes.image?.data?.attributes.url
+                      item?.attributes.image?.data?.attributes.url
                     )}
                   />
                 )}
               </div>
               <div className={styles.articleText}>
                 <div className={styles.articleTitle}>
-                  {item.attributes.title}
+                  {item?.attributes.title}
                 </div>
                 <div className={styles.articleDesc}>
-                  {item.attributes.description}
+                  {item?.attributes.description}
                 </div>
               </div>
             </Link>

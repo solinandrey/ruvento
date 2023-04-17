@@ -99,7 +99,7 @@ const PortfolioBlock = ({ companies }: Props) => {
                             rel="noreferrer"
                           >
                             <Image
-                              src={urlBuilder(item.Logo.data.attributes.url)}
+                              src={urlBuilder(item?.Logo?.data?.attributes?.url)}
                               alt={item.Link || ""}
                               width="500"
                               height="500"

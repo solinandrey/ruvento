@@ -21,7 +21,6 @@ export async function getStaticProps() {
       populate: 'deep',
     }
   );
-  console.log(res.data.attributes, "data porti");
   return {
     props: {
       partners: res?.data?.attributes?.partners?.data[0]?.attributes?.partners || [],

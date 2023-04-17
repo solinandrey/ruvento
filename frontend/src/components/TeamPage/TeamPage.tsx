@@ -70,7 +70,7 @@ const TeamPage = ({ title, subtitle, teammates }: Props) => {
               <InfoCard
                 title={item.name}
                 topTitle
-                image={item.avatar.data.attributes.url}
+                image={item?.avatar?.data?.attributes?.url}
                 description={item.description}
                 link={item.link}
               />
