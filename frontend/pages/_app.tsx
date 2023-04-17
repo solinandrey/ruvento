@@ -58,7 +58,7 @@ const MyApp = ({ Component, pageProps }: any) => {
       <Head>
         <link
           rel="shortcut icon"
-          href={urlBuilder(global.attributes.favicon)}
+          href={urlBuilder(global?.attributes?.favicon?.data?.attributes?.url)}
         />
         <title>{global?.attributes?.siteName}</title>
         <meta
