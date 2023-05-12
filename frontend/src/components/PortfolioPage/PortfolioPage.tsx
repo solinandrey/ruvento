@@ -68,6 +68,7 @@ const logos = [
 
 interface Props {
   title: string;
+  subtitle?: string;
   partners: {
     Link: string;
     Logo: { data: { attributes: { url: string } } };
@@ -75,12 +76,11 @@ interface Props {
   }[];
 }
 
-const PortfolioPage = ({ partners, title }: Props) => {
+const PortfolioPage = ({ partners, title, subtitle }: Props) => {
   return (
     <div className={styles.portfolio}>
-      <div className={styles.title}>
-        {title}
-      </div>
+      <div className={styles.title}>{title}</div>
+      {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
       <div className={styles.logos}>
         <div className={styles.logosContainer}>
           {partners?.map((item, idx) => {

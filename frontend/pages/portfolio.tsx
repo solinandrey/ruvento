@@ -4,10 +4,10 @@ import { fetchAPI } from 'lib/api';
 const PortfolioPage = dynamic(() => import('@components/PortfolioPage'));
 const Layout = dynamic(() => import('@src/components/Layout'));
 
-const Portfolio = ({partners, title}: any) => {
+const Portfolio = ({partners, title, subtitle}: any) => {
   return (
     <Layout>
-      {partners && title && <PortfolioPage partners={partners} title={title}/>}
+      {partners && title && <PortfolioPage partners={partners} title={title} subtitle={subtitle}/>}
     </Layout>
   );
 };
@@ -24,7 +24,8 @@ export async function getStaticProps() {
   return {
     props: {
       partners: res?.data?.attributes?.partners?.data[0]?.attributes?.partners || [],
-      title: res?.data?.attributes.title || ''
+      title: res?.data?.attributes.title || '',
+      subtitle: res?.data?.attributes.subtitle || ''
     },
 
     revalidate: 60,

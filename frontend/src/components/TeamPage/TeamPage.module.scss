@@ -38,21 +38,16 @@
 }
 
 .lastCard {
-  width: 60.6rem;
+  width: 90.6rem;
   margin-top: 5.29rem;
   margin-bottom: 10rem;
 }
 
 .lastCardTitle {
   // font-family: $circeBold;
-  @include robotoMid();
-  font-size: 4.51rem;
+  @include robotoLight();
+  font-size: 2.31rem;
   color: $black;
-  text-transform: uppercase;
-  text-decoration: underline;
-  text-decoration-color: $orange;
-  text-decoration-thickness: 0.21rem;
-  text-underline-offset: 0.6rem;
 }
 
 .lastCardDescription {
@@ -61,6 +56,7 @@
   font-size: 2.43rem;
   color: $black;
   margin-top: .7rem;
+
 }
 
 @media screen and (max-width: $mobileSize) {
