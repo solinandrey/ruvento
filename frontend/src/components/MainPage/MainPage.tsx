@@ -15,7 +15,7 @@ const MainPage = ({ page }: any) => {
           titleRow3={page?.title?.titleRow3 || ''}
           description={page?.title?.description || ''}
         />
-        <PortfolioBlock companies={page?.Portfolio?.partner || {}}/>
+        <PortfolioBlock companies={page?.Portfolio?.partners?.data[0]?.attributes?.partner || {}}/>
       </div>
       <OperateBlock
         title={page?.howWeOperate?.title || ''}

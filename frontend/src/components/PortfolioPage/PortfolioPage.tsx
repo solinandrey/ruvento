@@ -70,8 +70,8 @@ interface Props {
   title: string;
   subtitle?: string;
   partners: {
-    Link: string;
-    Logo: { data: { attributes: { url: string } } };
+    link: string;
+    logo: { data: { attributes: { url: string } } };
     id: number;
   }[];
 }
@@ -88,13 +88,13 @@ const PortfolioPage = ({ partners, title, subtitle }: Props) => {
               <Link
                 className={styles.logoItem}
                 key={item.id + idx}
-                href={item.Link}
+                href={item.link}
                 target="_blank"
                 rel="noreferrer"
               >
                 <Image
-                  src={urlBuilder(item?.Logo?.data?.attributes?.url)}
-                  alt={item.Link}
+                  src={urlBuilder(item?.logo?.data?.attributes?.url)}
+                  alt={item.link}
                   width="500"
                   height="500"
                 />

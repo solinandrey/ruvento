@@ -6,11 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "partner": {
-      "displayName": "partner",
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.partner"
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
     }
   }
 }

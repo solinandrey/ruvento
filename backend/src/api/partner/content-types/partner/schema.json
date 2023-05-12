@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "partners": {
+    "partner": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.portfolio-array"
+      "component": "shared.partner"
     }
   }
 }

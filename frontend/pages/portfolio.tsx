@@ -23,7 +23,7 @@ export async function getStaticProps() {
   );
   return {
     props: {
-      partners: res?.data?.attributes?.partners?.data[0]?.attributes?.partners || [],
+      partners: res?.data?.attributes?.portfolio?.data[0]?.attributes?.partner || [],
       title: res?.data?.attributes.title || '',
       subtitle: res?.data?.attributes.subtitle || ''
     },
