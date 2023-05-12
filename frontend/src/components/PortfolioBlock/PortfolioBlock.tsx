@@ -22,8 +22,8 @@ import creopop from "@images/creopop.png";
 import powerdot from "@images/powerdot.png";
 
 interface CompanyLogo {
-  Logo: { data: { attributes: { url: string } } };
-  Link?: string;
+  logo: { data: { attributes: { url: string } } };
+  link?: string;
 }
 
 // const companies: CompanyLogo[] = [
@@ -92,15 +92,15 @@ const PortfolioBlock = ({ companies }: Props) => {
                       (item, idx) => {
                         return (
                           <a
-                            href={item.Link}
+                            href={item.link}
                             target="_blank"
                             className={styles.logoItem}
-                            key={(item.Link || "") + idx + i}
+                            key={(item.link || "") + idx + i}
                             rel="noreferrer"
                           >
                             <Image
-                              src={urlBuilder(item?.Logo?.data?.attributes?.url)}
-                              alt={item.Link || ""}
+                              src={urlBuilder(item?.logo?.data?.attributes?.url)}
+                              alt={item.link || ""}
                               width="500"
                               height="500"
                             />

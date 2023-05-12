@@ -22,7 +22,7 @@
     "Portfolio": {
       "displayName": "Portfolio array",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "shared.portfolio-array"
     },
     "howWeOperate": {

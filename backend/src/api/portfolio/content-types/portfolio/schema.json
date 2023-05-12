@@ -15,7 +15,7 @@
     "title": {
       "type": "richtext"
     },
-    "partners": {
+    "portfolio": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::partner.partner"
