@@ -41,7 +41,7 @@
   line-height: 1.49;
   display: block;
   overflow: hidden;
-  transition: color .2s $transitionFunc;
+  transition: color .2s $transitionFunc, opacity .2s $transitionFunc;
   &:not(:first-of-type) {
     margin-left: 6.53rem;
   }
@@ -66,6 +66,11 @@
       width: 100%;
       transform: translateX(0);
     }
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 

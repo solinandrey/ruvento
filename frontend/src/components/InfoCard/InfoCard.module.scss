@@ -17,20 +17,21 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform .15s ease-in-out, filter .15s ease-in-out;
+  filter: none;
 
   & img {
     width: 100%;
     height: auto;
-    filter: grayscale(1) brightness(0.7);
-    transition: transform .15s ease-in-out, filter .15s ease-in-out;
-
-    .mainPage & {
-      filter: none;
-    }
   }
 
   .teammate & {
     order: 0;
+    filter: grayscale(1);
+  }
+
+  .teammate:hover & {
+    filter: none;
   }
 }
 
@@ -38,7 +39,7 @@
   position: relative;
   font-family: $circeExtraBold;
   @include robotoBold();
-  font-size: 2.43rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   
   .mainPage & {
