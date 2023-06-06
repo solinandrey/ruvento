@@ -1,8 +1,10 @@
 import dynamic from 'next/dynamic';
 import { fetchAPI } from 'lib/api';
+import PortfolioPage from '@components/PortfolioPage';
+import Layout from '@src/components/Layout';
 
-const PortfolioPage = dynamic(() => import('@components/PortfolioPage'));
-const Layout = dynamic(() => import('@src/components/Layout'));
+// const PortfolioPage = dynamic(() => import('@components/PortfolioPage'));
+// const Layout = dynamic(() => import('@src/components/Layout'));
 
 const Portfolio = ({partners, title, subtitle}: any) => {
   return (

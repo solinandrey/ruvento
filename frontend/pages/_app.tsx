@@ -8,7 +8,7 @@ import Header from "@src/components/Header";
 import Footer from "@src/components/Footer";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
-import { Roboto } from 'next/font/google';
+import { Roboto } from "next/font/google";
 import { urlBuilder } from "@src/mixins";
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
@@ -26,13 +26,13 @@ const MyApp = ({ Component, pageProps }: any) => {
   `;
 
   useEffect(() => {
-    console.log(global, 'global')
-  }, [])
+    console.log(global, "global");
+  }, []);
 
   useEffect(() => {
-    const styleTag = document.createElement('style');
+    const styleTag = document.createElement("style");
     styleTag.appendChild(document.createTextNode(fontStyles));
-    styleTag.addEventListener('load', () => {
+    styleTag.addEventListener("load", () => {
       setLoaded(true);
       firePreloader();
     });
@@ -40,18 +40,17 @@ const MyApp = ({ Component, pageProps }: any) => {
   }, [fontStyles]);
 
   const firePreloader = () => {
-    const preloader = document.querySelector('.preloader');
+    const preloader = document.querySelector(".preloader");
     setTimeout(() => {
-      preloader?.classList.add('loaded');
+      preloader?.classList.add("loaded");
       setTimeout(() => {
-        preloader?.classList.add('done');
+        preloader?.classList.add("done");
         setTimeout(() => {
           preloader?.remove();
         }, 200);
-      }, 500)
+      }, 500);
     }, 1000);
-  }
-
+  };
 
   return (
     <>
@@ -66,14 +65,59 @@ const MyApp = ({ Component, pageProps }: any) => {
           content={global?.attributes?.deafultSeo?.metaDescription}
           key="desc"
         />
-        <meta property="og:title" content={global?.attributes?.deafultSeo?.metaTitle} />
+        <meta
+          property="og:title"
+          content={global?.attributes?.deafultSeo?.metaTitle}
+        />
         <meta
           property="og:description"
           content={global?.attributes?.deafultSeo?.metaDescription}
         />
         <meta
           property="og:image"
-          content={urlBuilder(global?.attributes?.deafultSeo?.shareImage?.data?.attributes?.url)}
+          content={urlBuilder(
+            global?.attributes?.deafultSeo?.shareImage?.data?.attributes?.url
+          )}
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/BlogPage/BlogPage.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/PortfolioPage/PortfolioPage.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/TeamPage/TeamPage.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/Footer/Footer.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/Header/Header.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/InfoCard/InfoCard.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/LatestNews/LatestNews.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/OperateBlock/OperateBlock.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/PortfolioBlock/PortfolioBlock.module.scss"
+        />
+        <link
+          rel="stylesheet"
+          href="../src/components/TitleBlock/TitleBlock.module.scss"
         />
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
@@ -96,7 +140,7 @@ const MyApp = ({ Component, pageProps }: any) => {
         {/* </GlobalContext.Provider> */}
       </AnimatePresence>
 
-      <Footer description={global?.attributes?.footer || ''}/>
+      <Footer description={global?.attributes?.footer || ""} />
     </>
   );
 };

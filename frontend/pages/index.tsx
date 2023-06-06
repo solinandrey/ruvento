@@ -5,13 +5,9 @@ import { useEffect } from "react";
 import MainPage from "@components/MainPage";
 import Layout from "@src/components/Layout";
 
-import dynamic from 'next/dynamic';
 
 
 export default function Home({ page }: any) {
-  useEffect(() => {
-    console.log(page, 'page')
-  }, [page])
   return (
     <>
       <Head>
