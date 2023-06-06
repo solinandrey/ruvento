@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: "default",
-    domains: ["localhost"],
+    domains: ["https://ruvento.s3.ap-southeast-1.amazonaws.com/"],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
