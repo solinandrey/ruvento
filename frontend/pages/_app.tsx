@@ -10,6 +10,16 @@ import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { Roboto } from "next/font/google";
 import { urlBuilder } from "@src/mixins";
+import '../src/components/BlogPage/BlogPage.module.scss';
+import '../src/components/PortfolioPage/PortfolioPage.module.scss';
+import '../src/components/Footer/Footer.module.scss';
+import '../src/components/Header/Header.module.scss';
+import '../src/components/InfoCard/InfoCard.module.scss';
+import '../src/components/LatestNews/LatestNews.module.scss';
+import '../src/components/OperateBlock/OperateBlock.module.scss';
+import '../src/components/PortfolioBlock/PortfolioBlock.module.scss';
+import '../src/components/TeamPage/TeamPage.module.scss';
+import '../src/components/TitleBlock/TitleBlock.module.scss';
 // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
@@ -78,46 +88,6 @@ const MyApp = ({ Component, pageProps }: any) => {
           content={urlBuilder(
             global?.attributes?.deafultSeo?.shareImage?.data?.attributes?.url
           )}
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/BlogPage/BlogPage.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/PortfolioPage/PortfolioPage.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/TeamPage/TeamPage.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/Footer/Footer.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/Header/Header.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/InfoCard/InfoCard.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/LatestNews/LatestNews.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/OperateBlock/OperateBlock.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/PortfolioBlock/PortfolioBlock.module.scss"
-        />
-        <link
-          rel="stylesheet"
-          href="../src/components/TitleBlock/TitleBlock.module.scss"
         />
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
