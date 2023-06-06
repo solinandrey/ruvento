@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   width: 24rem;
   &.mainPage {
     width: 30rem;
@@ -6,6 +7,7 @@
 }
 
 .image {
+  position: relative;
   width: 100%;
   height: 22.3rem;
   background-size: cover;
@@ -15,10 +17,17 @@
   & img {
     width: 100%;
     height: auto;
+    filter: grayscale(1) brightness(0.7);
+    transition: transform .15s ease-in-out, filter .15s ease-in-out;
+
+    .mainPage & {
+      filter: none;
+    }
   }
 }
 
 .title {
+  position: relative;
   font-family: $circeExtraBold;
   @include robotoBold();
   font-size: 2.43rem;
@@ -29,15 +38,18 @@
 }
 
 .topTitle {
+  position: relative;
   color: $black;
 }
 
 .bottomTitle {
+  position: relative;
   color: $orange;
   margin-top: 4.5rem;
 }
 
 .desc {
+  position: relative;
   // font-family: $circe;
   @include robotoLight();
   font-size: 2.43rem;
@@ -46,6 +58,25 @@
   .mainPage & {
     font-size: 2rem;
   }
+}
+
+.backgroundHover {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  opacity: 0;
+  background: $orangeWhite;
+  transition: opacity .3s ease-in-out, border-color .3s ease-in-out;
+
+  .card:hover & {
+    opacity: 0.5;
+  }
+
+  .mainPage & {
+    display: none;
+  } 
 }
 
 @media screen and (max-width: $mobileSize) {

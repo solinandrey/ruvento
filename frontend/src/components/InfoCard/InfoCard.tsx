@@ -9,6 +9,7 @@ interface Props {
   description: string;
   mainPage?: boolean;
   link?: string;
+  hover?: boolean;
 }
 
 const InfoCard = ({
@@ -18,14 +19,16 @@ const InfoCard = ({
   description,
   mainPage,
   link,
+  hover
 }: Props) => {
   return (
     <a
-      className={`${styles.card} ${mainPage ? styles.mainPage : ""}`}
+      className={`${styles.card} ${mainPage ? styles.mainPage : ""} `}
       href={link}
       target="_blank"
       rel="noreferrer"
     >
+      <div className={styles.backgroundHover}></div>
       {topTitle && (
         <div className={`${styles.title} ${styles.topTitle}`}>{title}</div>
       )}
