@@ -9,7 +9,7 @@ interface Props {
   description: string;
   mainPage?: boolean;
   link?: string;
-  hover?: boolean;
+  teammate?: boolean;
 }
 
 const InfoCard = ({
@@ -19,11 +19,11 @@ const InfoCard = ({
   description,
   mainPage,
   link,
-  hover
+  teammate
 }: Props) => {
   return (
     <a
-      className={`${styles.card} ${mainPage ? styles.mainPage : ""} `}
+      className={`${styles.card} ${mainPage ? styles.mainPage : ""} ${teammate ? styles.teammate : ""}`}
       href={link}
       target="_blank"
       rel="noreferrer"

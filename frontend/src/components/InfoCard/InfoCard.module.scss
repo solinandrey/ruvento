@@ -2,6 +2,8 @@
   position: relative;
   width: 24rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   &.mainPage {
     width: 30rem;
     cursor: auto;
@@ -26,6 +28,10 @@
       filter: none;
     }
   }
+
+  .teammate & {
+    order: 0;
+  }
 }
 
 .title {
@@ -34,6 +40,7 @@
   @include robotoBold();
   font-size: 2.43rem;
   text-transform: uppercase;
+  
   .mainPage & {
     font-size: 2rem;
   }
@@ -42,6 +49,10 @@
 .topTitle {
   position: relative;
   color: $black;
+  .teammate & {
+    order: 1;
+    margin-top: 3rem;
+  }
 }
 
 .bottomTitle {
@@ -57,6 +68,9 @@
   font-size: 2.43rem;
   color: $black;
   margin-top: 0.7rem;
+  .teammate & {
+    order: 2;
+  }
   .mainPage & {
     font-size: 2rem;
   }

@@ -73,6 +73,7 @@ const TeamPage = ({ title, subtitle, teammates }: Props) => {
                 image={item?.avatar?.data?.attributes?.url}
                 description={item.description}
                 link={item.link}
+                teammate
               />
             </div>
           );
