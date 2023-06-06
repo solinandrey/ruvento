@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_partners",
   "info": {
-    "displayName": "partner"
+    "displayName": "partner",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,14 +10,18 @@
       "type": "string"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "description": {
+      "type": "string"
     }
   }
 }
