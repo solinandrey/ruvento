@@ -3,7 +3,7 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["ruvento.s3.ap-southeast-1.amazonaws.com"],
+    domains: ["localhost","ruvento.s3.ap-southeast-1.amazonaws.com"],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

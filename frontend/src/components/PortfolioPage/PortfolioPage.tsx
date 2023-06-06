@@ -73,10 +73,12 @@ interface Props {
     link: string;
     logo: { data: { attributes: { url: string } } };
     id: number;
+    description: string;
   }[];
 }
 
 const PortfolioPage = ({ partners, title, subtitle }: Props) => {
+
   return (
     <div className={styles.portfolio}>
       <div className={styles.title}>{title}</div>
@@ -98,6 +100,7 @@ const PortfolioPage = ({ partners, title, subtitle }: Props) => {
                   width="500"
                   height="500"
                 />
+                <div className={styles.logoDescription}>{item.description}</div>
               </Link>
             );
           })}
