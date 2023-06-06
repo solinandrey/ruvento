@@ -1,8 +1,10 @@
 .card {
   position: relative;
   width: 24rem;
+  cursor: pointer;
   &.mainPage {
     width: 30rem;
+    cursor: auto;
   }
 }
 
