@@ -107,7 +107,7 @@ const key = useAsPathWithoutHash();
           }
         }}
       > */}
-      <PageTransition>
+      <PageTransition inPhaseDuration={150} outPhaseDuration={150}>
         <div className="page-container" key={key}>
           <Component {...pageProps} />
         </div>
