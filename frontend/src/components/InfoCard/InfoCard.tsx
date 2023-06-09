@@ -5,7 +5,7 @@ import { urlBuilder } from "@src/mixins";
 interface Props {
   topTitle?: boolean;
   title: string;
-  image: string;
+  image?: string;
   description: string;
   mainPage?: boolean;
   link?: string;
@@ -19,11 +19,13 @@ const InfoCard = ({
   description,
   mainPage,
   link,
-  teammate
+  teammate,
 }: Props) => {
   return (
     <a
-      className={`${styles.card} ${mainPage ? styles.mainPage : ""} ${teammate ? styles.teammate : ""}`}
+      className={`${styles.card} ${mainPage ? styles.mainPage : ""} ${
+        teammate ? styles.teammate : ""
+      }`}
       href={link}
       target="_blank"
       rel="noreferrer"
@@ -32,10 +34,13 @@ const InfoCard = ({
       {topTitle && (
         <div className={`${styles.title} ${styles.topTitle}`}>{title}</div>
       )}
-      <div
-        className={styles.image}
-        style={{ backgroundImage: `url(${urlBuilder(image)})` }}
-      ></div>
+      {image && (
+        <div
+          className={styles.image}
+          style={{ backgroundImage: `url(${urlBuilder(image)})` }}
+        ></div>
+      )}
+
       {!topTitle && (
         <div className={`${styles.title} ${styles.bottomTitle}`}>{title}</div>
       )}
