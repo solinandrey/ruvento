@@ -1079,6 +1079,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@madeinhaus/nextjs-page-transition@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@madeinhaus/nextjs-page-transition/-/nextjs-page-transition-2.0.1.tgz#d0c26792228b33d2d1813871137fcaaeaf470bfb"
+  integrity sha512-/HDA2/vLWDXUNRQrO8L/40WK2XjNSko6tWQv5k8AQe61KMrKDn9coT95cxRzRzT1W5G/atLbK4+twxj9YGsf5w==
+
 "@motionone/animation@^10.15.1":
   version "10.15.1"
   resolved "https://registry.yarnpkg.com/@motionone/animation/-/animation-10.15.1.tgz#4a85596c31cbc5100ae8eb8b34c459fb0ccf6807"

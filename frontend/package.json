@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@madeinhaus/nextjs-page-transition": "^2.0.1",
     "@next/font": "13.1.6",
     "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.18",

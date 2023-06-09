@@ -10,23 +10,27 @@ import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import { Roboto } from "next/font/google";
 import { urlBuilder } from "@src/mixins";
-import '../src/components/BlogPage/BlogPage.module.scss';
-import '../src/components/PortfolioPage/PortfolioPage.module.scss';
-import '../src/components/Footer/Footer.module.scss';
-import '../src/components/Header/Header.module.scss';
-import '../src/components/InfoCard/InfoCard.module.scss';
-import '../src/components/LatestNews/LatestNews.module.scss';
-import '../src/components/OperateBlock/OperateBlock.module.scss';
-import '../src/components/PortfolioBlock/PortfolioBlock.module.scss';
-import '../src/components/TeamPage/TeamPage.module.scss';
-import '../src/components/TitleBlock/TitleBlock.module.scss';
-// Store Strapi Global object in context
+import "../src/components/BlogPage/BlogPage.module.scss";
+import "../src/components/PortfolioPage/PortfolioPage.module.scss";
+import "../src/components/Footer/Footer.module.scss";
+import "../src/components/Header/Header.module.scss";
+import "../src/components/InfoCard/InfoCard.module.scss";
+import "../src/components/LatestNews/LatestNews.module.scss";
+import "../src/components/OperateBlock/OperateBlock.module.scss";
+import "../src/components/PortfolioBlock/PortfolioBlock.module.scss";
+import "../src/components/TeamPage/TeamPage.module.scss";
+import "../src/components/TitleBlock/TitleBlock.module.scss";
+import PageTransition, {
+  useAsPathWithoutHash,
+} from "@madeinhaus/nextjs-page-transition"; // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
 const MyApp = ({ Component, pageProps }: any) => {
   const { global } = pageProps;
   const router = useRouter();
   const [loaded, setLoaded] = useState(false);
+
+const key = useAsPathWithoutHash();
 
   const fontStyles = `
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
@@ -35,9 +39,9 @@ const MyApp = ({ Component, pageProps }: any) => {
     }
   `;
 
-  useEffect(() => {
-    console.log(global, "global");
-  }, []);
+  // useEffect(() => {
+  //   console.log(global, "global");
+  // }, []);
 
   useEffect(() => {
     const styleTag = document.createElement("style");
@@ -94,7 +98,7 @@ const MyApp = ({ Component, pageProps }: any) => {
 
       <Header />
 
-      <AnimatePresence
+      {/* <AnimatePresence
         mode="wait"
         initial={false}
         onExitComplete={() => {
@@ -102,13 +106,13 @@ const MyApp = ({ Component, pageProps }: any) => {
             window.scrollTo({ top: 0 });
           }
         }}
-      >
-        {/* <Component {...pageProps} /> */}
-        <div className="page-container" key={router.asPath}>
+      > */}
+      <PageTransition>
+        <div className="page-container" key={key}>
           <Component {...pageProps} />
         </div>
-        {/* </GlobalContext.Provider> */}
-      </AnimatePresence>
+      </PageTransition>
+      {/* </AnimatePresence> */}
 
       <Footer description={global?.attributes?.footer || ""} />
     </>
