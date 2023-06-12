@@ -90,7 +90,7 @@ const key = useAsPathWithoutHash();
         <meta
           property="og:image"
           content={urlBuilder(
-            global?.attributes?.deafultSeo?.shareImage?.data?.attributes?.url
+            global?.attributes?.defaultSeo?.shareImage?.data?.attributes?.url
           )}
         />
       </Head>
