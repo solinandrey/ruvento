@@ -28,7 +28,12 @@
 
 .runnigRow {
   display: flex;
-  animation: run 60s linear -1s infinite;
+  // animation: run 60s linear -1s infinite;
+}
+
+.marquee {
+  height: 8rem;
+  z-index: 0;
 }
 
 .logoItem {

@@ -16,9 +16,9 @@ interface Props {
 const PortfolioBlock = ({ companies }: Props) => {
   const getCompaniesRow = (
     arr: CompanyLogo[],
-    row: "up" | "down"
+    row: "left" | "right"
   ): CompanyLogo[] => {
-    return row === "up"
+    return row === "left"
       ? [...doubleArray(doubleArray(arr.slice(0, Math.round(arr.length / 2))))]
       : [...doubleArray(doubleArray(arr.slice(Math.round(arr.length / 2))))];
   };
@@ -35,9 +35,9 @@ const PortfolioBlock = ({ companies }: Props) => {
           <div className={styles.logos}>
             {(["left", "right"] as ("left" | "right")[]).map((dir) => {
               return (
-                <Marquee direction={dir} key={dir}>
+                <Marquee direction={dir} key={dir} className={styles.marquee} speed={25}>
                   <div className={styles.runnigRow} key={`dup`}>
-                    {companies.map((item, idx) => {
+                    {getCompaniesRow(companies, "left").map((item, idx) => {
                       return (
                         <a
                           href={item.link}
