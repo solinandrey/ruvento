@@ -33,39 +33,9 @@ const PortfolioBlock = ({ companies }: Props) => {
         <div className={styles.title}>our portfolio</div>
         {companies && companies.length && (
           <div className={styles.logos}>
-            {/* {["up", "down"].map((part) => (
-              <div className={`${styles.logoRow} ${styles[part]}`} key={part}>
-                {[1, 2].map((_, i) => (
-                  <div className={styles.runnigRow} key={`dup${part}${i}`}>
-                    {getCompaniesRow(companies, part as "up" | "down").map(
-                      (item, idx) => {
-                        return (
-                          <a
-                            href={item.link}
-                            target="_blank"
-                            className={styles.logoItem}
-                            key={(item.link || "") + idx + i}
-                            rel="noreferrer"
-                          >
-                            <Image
-                              src={urlBuilder(
-                                item?.logo?.data?.attributes?.url
-                              )}
-                              alt={item.link || ""}
-                              width="500"
-                              height="500"
-                            />
-                          </a>
-                        );
-                      }
-                    )}
-                  </div>
-                ))}
-              </div>
-            ))} */}
             {(["left", "right"] as ("left" | "right")[]).map((dir) => {
               return (
-                <Marquee direction={dir}>
+                <Marquee direction={dir} key={dir}>
                   <div className={styles.runnigRow} key={`dup`}>
                     {companies.map((item, idx) => {
                       return (
