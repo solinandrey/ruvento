@@ -39,9 +39,9 @@ const key = useAsPathWithoutHash();
     }
   `;
 
-  // useEffect(() => {
-  //   console.log(global, "global");
-  // }, []);
+  useEffect(() => {
+    console.log(global, "global");
+  }, []);
 
   useEffect(() => {
     const styleTag = document.createElement("style");
@@ -76,16 +76,16 @@ const key = useAsPathWithoutHash();
         <title>{global?.attributes?.siteName}</title>
         <meta
           name="description"
-          content={global?.attributes?.deafultSeo?.metaDescription}
+          content={global?.attributes?.defaultSeo?.metaDescription}
           key="desc"
         />
         <meta
           property="og:title"
-          content={global?.attributes?.deafultSeo?.metaTitle}
+          content={global?.attributes?.defaultSeo?.metaTitle}
         />
         <meta
           property="og:description"
-          content={global?.attributes?.deafultSeo?.metaDescription}
+          content={global?.attributes?.defaultSeo?.metaDescription}
         />
         <meta
           property="og:image"
