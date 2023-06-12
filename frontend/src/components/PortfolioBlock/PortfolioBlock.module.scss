@@ -23,7 +23,6 @@
 
 .logoRow {
   display: flex;
-  
 }
 
 .runnigRow {
@@ -34,13 +33,18 @@
 .marquee {
   height: 8rem;
   z-index: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .logoItem {
   height: 6rem;
   margin-left: 4.45rem;
   filter: grayscale(1);
-  transition: transform .15s ease-in-out, filter .15s ease-in-out;
+  transition: transform 0.15s ease-in-out, filter 0.15s ease-in-out;
 
   &:hover {
     filter: none;
@@ -62,10 +66,13 @@
   }
 }
 
-
 @keyframes run {
-  from {transform: translate3d(0,0,0);}
-  to {transform: translate3d(-100%,0,0);}
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 @media screen and (max-width: $mobileSize) {
