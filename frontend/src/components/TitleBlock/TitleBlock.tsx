@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 interface Props {
-  titleRow1: string;
-  titleRow2: string;
-  titleRow3: string;
-  description: string;
+  titleRow1?: string;
+  titleRow2?: string;
+  titleRow3?: string;
+  description?: string;
 }
 
 const TitleBlock = ({

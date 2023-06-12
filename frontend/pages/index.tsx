@@ -10,11 +10,6 @@ import Layout from "@src/components/Layout";
 export default function Home({ page }: any) {
   return (
     <>
-      <Head>
-        <title>Ruvento</title>
-        <meta name="description" content="Ruvento website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <main>
         <Layout>
           <MainPage page={page}/>

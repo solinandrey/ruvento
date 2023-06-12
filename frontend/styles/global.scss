@@ -31,6 +31,16 @@ a {
   align-items: center;
 }
 
+.not-found-desc {
+  @include robotoMid();
+  font-size: 2.43rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .preloader {
   position: fixed;
   top: 0;
