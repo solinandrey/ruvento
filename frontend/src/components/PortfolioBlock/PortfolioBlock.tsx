@@ -40,7 +40,7 @@ const PortfolioBlock = ({ companies }: Props) => {
           <div className={styles.logos}>
             {(["left", "right"] as ("left" | "right")[]).map((dir) => {
               return (
-                <Marquee direction={dir} key={dir} className={styles.marquee} speed={40} style={{justifyContent: 'center'}}>
+                <Marquee direction={dir} key={dir} className={styles.marquee} speed={40}>
                   <div className={styles.runnigRow} key={`dup`}>
                     {getCompaniesRow(companies, dir).map((item, idx) => {
                       return (
