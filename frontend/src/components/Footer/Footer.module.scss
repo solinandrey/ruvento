@@ -70,14 +70,23 @@
 
 .socialLinks {
   display: flex;
-  transform: translateY(-0.5rem);
+  justify-content: space-between;
+  row-gap: 1.2rem;
+  transform: translateY(0.7rem);
 }
 
 .socialLinksItem{
-  width: 3.4rem;
+  // width: 3.4rem;
+  display: block;
+  font-size: 2.43rem;
+  color: $orange;
   height: auto;
+  transition: color 0.2s $transitionFunc;
   &:not(:first-of-type) {
-    margin-left: 0.9rem;
+    margin-left: 1.2rem;
+  }
+  &:hover {
+    color: $black;
   }
 }
 
@@ -113,7 +122,8 @@
   }
 
   .socialLinksItem{
-    width: 7rem;
+    // width: 7rem;
+    font-size: 3rem;
     &:not(:first-of-type) {
       margin-left: 2rem;
     }

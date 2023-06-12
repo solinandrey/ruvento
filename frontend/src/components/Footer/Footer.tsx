@@ -8,10 +8,10 @@ import FbLogo from "@images/fb.svg";
 import Logo from "@images/logotype.svg";
 
 interface Props {
-  description: string
+  description: string;
 }
 
-const Footer = ({description}: Props) => {
+const Footer = ({ description }: Props) => {
   return (
     <div className={styles.footer}>
       {/* <div className={styles.title}>
@@ -37,21 +37,26 @@ const Footer = ({description}: Props) => {
           </div>
         </div>
         <div className={styles.socialLinks}>
-          <Link href="" className={styles.socialLinksItem} target="_blank">
-            <TwitterLogo />
+          <Link
+            href="https://www.linkedin.com/company/-ruvento-venture-fund/"
+            className={styles.socialLinksItem}
+            target="_blank"
+          >
+            {/* <TwitterLogo /> */}
+            LinkedIn
           </Link>
-          <Link href="" className={styles.socialLinksItem} target="_blank">
-            <InstagramLogo />
-          </Link>
-          <Link href="" className={styles.socialLinksItem} target="_blank">
-            <FbLogo />
+          <Link
+            href="https://www.crunchbase.com/organization/ruvento"
+            className={styles.socialLinksItem}
+            target="_blank"
+          >
+            {/* <InstagramLogo /> */}
+            Crunchbase
           </Link>
         </div>
       </div>
       <div className={styles.bottomRow}>
-        <div className={styles.bottomText}>
-          {description}
-        </div>
+        <div className={styles.bottomText}>{description}</div>
         <div className={styles.bottomLogo}>
           <Logo />
         </div>
