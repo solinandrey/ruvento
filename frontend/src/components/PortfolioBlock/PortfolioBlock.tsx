@@ -3,9 +3,10 @@ import Marquee from "react-fast-marquee";
 
 import styles from "./PortfolioBlock.module.scss";
 import { urlBuilder } from "@src/mixins";
+import { useEffect } from "react";
 
 interface CompanyLogo {
-  logo: { data: { attributes: { url: string } } };
+  logo: { data: { attributes: { url: string, width: number, height: number } } };
   link?: string;
 }
 
@@ -14,6 +15,10 @@ interface Props {
 }
 
 const PortfolioBlock = ({ companies }: Props) => {
+
+  useEffect(() => {
+    console.log(companies, 'com[')
+  }, [])
   const getCompaniesRow = (
     arr: CompanyLogo[],
     row: "left" | "right"
@@ -35,7 +40,7 @@ const PortfolioBlock = ({ companies }: Props) => {
           <div className={styles.logos}>
             {(["left", "right"] as ("left" | "right")[]).map((dir) => {
               return (
-                <Marquee direction={dir} key={dir} className={styles.marquee} speed={40}>
+                <Marquee direction={dir} key={dir} className={styles.marquee} speed={40} style={{justifyContent: 'center'}}>
                   <div className={styles.runnigRow} key={`dup`}>
                     {getCompaniesRow(companies, dir).map((item, idx) => {
                       return (
@@ -49,8 +54,8 @@ const PortfolioBlock = ({ companies }: Props) => {
                           <Image
                             src={urlBuilder(item?.logo?.data?.attributes?.url)}
                             alt={item.link || ""}
-                            width="500"
-                            height="500"
+                            width={item?.logo?.data?.attributes?.width}
+                            height={item?.logo?.data?.attributes?.height}
                           />
                         </a>
                       );
