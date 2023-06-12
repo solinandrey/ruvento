@@ -37,7 +37,7 @@ const PortfolioBlock = ({ companies }: Props) => {
               return (
                 <Marquee direction={dir} key={dir} className={styles.marquee} speed={25}>
                   <div className={styles.runnigRow} key={`dup`}>
-                    {getCompaniesRow(companies, "left").map((item, idx) => {
+                    {getCompaniesRow(companies, dir).map((item, idx) => {
                       return (
                         <a
                           href={item.link}
