@@ -10,12 +10,6 @@
   }
 }
 
-@media screen and (max-width: $mobileSize) {
-  .team {
-    padding: 0 $mobileLayoutPadding;
-  }
-}
-
 .title {
   color: $orange;
   font-size: 8.68rem;
@@ -64,6 +58,11 @@
     font-size: 3rem;
   }
 
-  .cardsItem {
+  .team {
+    padding: 0 $mobileLayoutPadding;
+  }
+
+  .lastCardTitle {
+    font-size: 4rem;
   }
 }

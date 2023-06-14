@@ -122,7 +122,7 @@
 
   .subtitle {
     padding: 0 $mobileLayoutPadding;
-    font-size: 3.3rem;
+    font-size: 4rem;
   }
 
   .logoItem {
@@ -133,6 +133,10 @@
   .logos {
     padding: 0 $mobileLayoutPadding;
     margin-top: 6.38rem;
+  }
+
+  .exit {
+    font-size: 3rem;
   }
   
 }
