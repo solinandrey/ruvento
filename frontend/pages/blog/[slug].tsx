@@ -9,9 +9,7 @@ import remarkImages from "remark-images";
 import { useEffect } from "react";
 
 const ArticlePage = ({ article }: any) => {
-  useEffect(() => {
-    console.log('hello')
-  }, [])
+
   return (
     <Layout>
       <div className={styles.article}>

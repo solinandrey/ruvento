@@ -3,12 +3,9 @@ import TitleBlock from "@components/TitleBlock";
 import PortfolioBlock from "@components/PortfolioBlock";
 import OperateBlock from "@components/OperateBlock";
 import LatestNews from "../LatestNews";
-import { useEffect } from "react";
 
 const MainPage = ({ page }: any) => {
-  useEffect(() => {
-    console.log(page, "page");
-  }, []);
+
   return (
     <div className="main-page">
       <div className={styles.firstScreen}>
