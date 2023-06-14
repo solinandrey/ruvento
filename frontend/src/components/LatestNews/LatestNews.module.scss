@@ -2,6 +2,7 @@
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
   margin-top: 7.9rem;
+  width: 100%;
   max-width: $contentWidth;
 }
 
@@ -15,6 +16,7 @@
   .latestNews {
     padding: 0 $mobileLayoutPadding;
     max-width: unset;
+    width: unset;
   }
   
   .newsImage {
@@ -33,11 +35,16 @@
 
 .news {
   margin-top: 1.25rem;
+  width: 100%;
 }
 
 .newsItem {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  transition: background-color .3s ease-in-out;
+  
   &:not(:first-of-type) {
     margin-top: 6.53rem;
     position: relative;
@@ -52,10 +59,14 @@
       background: $orange;
     }
   }
+
+  &:hover {
+    background-color: $orangeWhite;
+  }
 }
 
 .newsText {
-  width: 86.8rem;
+  width: 70.8rem;
   // font-family: $circe;
   @include robotoLight();
   color: $black;
@@ -79,7 +90,7 @@
   }
 
   .newsText {
-    font-size: 3rem;
-    width: 72rem;
+    font-size: 4rem;
+    width: 75rem;
   }
 }

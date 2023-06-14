@@ -6,9 +6,12 @@ import { urlBuilder } from "@src/mixins";
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import remarkImages from "remark-images";
+import { useEffect } from "react";
 
 const ArticlePage = ({ article }: any) => {
-
+  useEffect(() => {
+    console.log('hello')
+  }, [])
   return (
     <Layout>
       <div className={styles.article}>

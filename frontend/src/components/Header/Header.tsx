@@ -14,13 +14,13 @@ const headerLinks = [
     label: "Team",
     link: "/team",
   },
-  // {
-  //   label: "Blog",
-  //   link: "/blog",
-  // },
 ];
 
-const Header = () => {
+interface IProps {
+  haveArticles?: boolean;
+}
+
+const Header = ({ haveArticles }: IProps) => {
   const router = useRouter();
 
   return (
@@ -49,6 +49,15 @@ const Header = () => {
             </Link>
           );
         })}
+        {haveArticles ? (
+          <Link
+            key={`header-link-${2}`}
+            href={'/blog'}
+            className={styles.linkItem}
+          >
+            Blog
+          </Link>
+        ) : null}
       </div>
     </div>
   );

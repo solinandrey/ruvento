@@ -25,12 +25,12 @@ import PageTransition, {
 } from "@madeinhaus/nextjs-page-transition"; // Store Strapi Global object in context
 export const GlobalContext = createContext({});
 
-const MyApp = ({ Component, pageProps }: any) => {
+const MyApp = ({ Component, pageProps, haveArticles }: any) => {
   const { global } = pageProps;
   const router = useRouter();
   const [loaded, setLoaded] = useState(false);
 
-const key = useAsPathWithoutHash();
+  const key = useAsPathWithoutHash();
 
   const fontStyles = `
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
@@ -38,7 +38,7 @@ const key = useAsPathWithoutHash();
       font-family: "Roboto", sans-serif;
     }
   `;
-  
+
   useEffect(() => {
     const styleTag = document.createElement("style");
     styleTag.appendChild(document.createTextNode(fontStyles));
@@ -92,7 +92,7 @@ const key = useAsPathWithoutHash();
       </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
 
-      <Header />
+      <Header haveArticles={haveArticles}/>
 
       {/* <AnimatePresence
         mode="wait"
@@ -110,7 +110,7 @@ const key = useAsPathWithoutHash();
       </PageTransition>
       {/* </AnimatePresence> */}
 
-      <Footer description={global?.attributes?.footer || ""} />
+      <Footer description={global?.attributes?.footer || ""} haveArticles={haveArticles} />
     </>
   );
 };
@@ -131,8 +131,17 @@ MyApp.getInitialProps = async (ctx: any) => {
       },
     },
   });
+
+  const haveArticles = await fetchAPI("/blog", {
+    populate: "deep",
+  });
+
   // Pass the data to our page via props
-  return { ...appProps, pageProps: { global: globalRes.data } };
+  return {
+    ...appProps,
+    pageProps: { global: globalRes.data },
+    haveArticles: !!haveArticles?.data?.attributes?.articles?.data?.length,
+  };
   // return {};
 };
 

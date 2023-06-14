@@ -54,7 +54,7 @@
     height: 2px;
     width: 100%;
     background: $orange;
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     transition: transform .2s $transitionFunc;
   }
 
@@ -80,7 +80,7 @@
   }
 
   .linkItem {
-    font-size: 3.73rem;
+    font-size: 3.23rem;
     display: flex;
     align-items: flex-end;
   }

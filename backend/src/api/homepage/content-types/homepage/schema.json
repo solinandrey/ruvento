@@ -36,6 +36,12 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.title"
+    },
+    "latestNews": {
+      "displayName": "latestNews",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.latest-news"
     }
   }
 }

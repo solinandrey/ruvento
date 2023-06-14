@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_latest_news",
+  "info": {
+    "displayName": "latestNews",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

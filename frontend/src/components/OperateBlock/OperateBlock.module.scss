@@ -2,7 +2,8 @@
   margin-top: 15.55rem;
   padding-left: $layoutPadding;
   padding-right: $layoutPadding;
-  // max-width: $contentWidth;
+  max-width: $contentWidth;
+  width: 100%;
 }
 
 @media screen and (min-width: $bigScreen) {
@@ -75,7 +76,9 @@
 
 @media screen and (max-width: $mobileSize) {
   .operateBlock {
+    padding: 0 $mobileLayoutPadding;
     margin-top: 12rem;
+    width: unset;
   }
 
   .top {

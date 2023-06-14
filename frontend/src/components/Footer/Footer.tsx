@@ -9,9 +9,10 @@ import Logo from "@images/logotype.svg";
 
 interface Props {
   description: string;
+  haveArticles?: boolean;
 }
 
-const Footer = ({ description }: Props) => {
+const Footer = ({ description, haveArticles }: Props) => {
   return (
     <div className={styles.footer}>
       {/* <div className={styles.title}>
@@ -26,9 +27,12 @@ const Footer = ({ description }: Props) => {
           >
             Portfolio
           </Link>
-          {/* <Link href="/blog" className={styles.footerNavItem} scroll={false}>
-            Blog
-          </Link> */}
+          {haveArticles ? (
+            <Link href="/blog" className={styles.footerNavItem} scroll={false}>
+              Blog
+            </Link>
+          ) : null}
+
           <Link href="/team" className={styles.footerNavItem} scroll={false}>
             Team
           </Link>
