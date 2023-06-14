@@ -3,10 +3,8 @@ import { fetchAPI } from "lib/api";
 import ReactMarkdown from "react-markdown";
 import styles from "./Blog.module.scss";
 import { urlBuilder } from "@src/mixins";
-import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import remarkImages from "remark-images";
-import { useEffect } from "react";
 
 const ArticlePage = ({ article }: any) => {
 
@@ -28,9 +26,16 @@ const ArticlePage = ({ article }: any) => {
 export default ArticlePage;
 
 export async function getStaticProps({ params }: any) {
-  const res = await fetchAPI(`/articles/${params.slug}`, {
-    populate: "deep",
-  });
+  let res;
+  try {
+    res = await fetchAPI(`/articles/${params.slug}`, {
+      populate: "deep",
+    });
+  } catch {
+    return {
+      notFound: true
+    }
+  }
 
   return {
     props: {
