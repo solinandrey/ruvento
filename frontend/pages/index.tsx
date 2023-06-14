@@ -28,7 +28,6 @@ export async function getStaticProps() {
       populate: 'deep',
     }
   );
-  // console.log(data.data.attributes, 'data')
   return {
     props: {
       page: res?.data?.attributes || {},

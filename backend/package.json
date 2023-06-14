@@ -9,7 +9,8 @@
     "lodash.set": "^4.3.2",
     "mime-types": "^2.1.27",
     "pg": "^8.10.0",
-    "strapi-plugin-populate-deep": "^2.0.0"
+    "strapi-plugin-populate-deep": "^2.0.0",
+    "strapi-plugin-wysiwyg-react-md-editor": "^4.3.0"
   },
   "name": "backend",
   "private": true,

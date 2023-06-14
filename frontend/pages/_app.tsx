@@ -38,11 +38,7 @@ const key = useAsPathWithoutHash();
       font-family: "Roboto", sans-serif;
     }
   `;
-
-  useEffect(() => {
-    console.log(global, "global");
-  }, []);
-
+  
   useEffect(() => {
     const styleTag = document.createElement("style");
     styleTag.appendChild(document.createTextNode(fontStyles));

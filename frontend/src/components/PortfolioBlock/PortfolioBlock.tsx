@@ -16,9 +16,6 @@ interface Props {
 
 const PortfolioBlock = ({ companies }: Props) => {
 
-  useEffect(() => {
-    console.log(companies, 'com[')
-  }, [])
   const getCompaniesRow = (
     arr: CompanyLogo[],
     row: "left" | "right"

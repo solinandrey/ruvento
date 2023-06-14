@@ -17,11 +17,8 @@ const TitleBlock = ({
   titleRow3,
   description,
 }: Props) => {
-  // useEffect(() => {
-  //   fetch("https://lobster-app-iw9uv.ondigitalocean.app/api/articles").then(
-  //     (res) => res.json()
-  //   ).then(data => console.log(data, 'data'));
-  // }, []);
+
+  
   return (
     <div className={styles.titleBlock}>
       <div className={styles.titleContent}>

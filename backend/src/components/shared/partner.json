@@ -22,6 +22,9 @@
     },
     "description": {
       "type": "string"
+    },
+    "exit": {
+      "type": "boolean"
     }
   }
 }

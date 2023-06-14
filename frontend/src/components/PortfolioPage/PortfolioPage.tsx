@@ -74,10 +74,12 @@ interface Props {
     logo: { data: { attributes: { url: string } } };
     id: number;
     description: string;
+    exit?: boolean;
   }[];
 }
 
 const PortfolioPage = ({ partners, title, subtitle }: Props) => {
+
 
   return (
     <div className={styles.portfolio}>
@@ -90,16 +92,17 @@ const PortfolioPage = ({ partners, title, subtitle }: Props) => {
               <Link
                 className={styles.logoItem}
                 key={item.id + idx}
-                href={item.link}
+                href={item.link || ''}
                 target="_blank"
                 rel="noreferrer"
               >
                 <Image
                   src={urlBuilder(item?.logo?.data?.attributes?.url)}
-                  alt={item.link}
+                  alt={item.link || 'company logo'}
                   width="500"
                   height="500"
                 />
+                {item.exit && <div className={styles.exit}>exit</div>}
                 <div className={styles.logoDescription}>{item.description}</div>
               </Link>
             );

@@ -33,7 +33,7 @@ const Footer = ({ description }: Props) => {
             Team
           </Link>
           <div className={styles.title}>
-            <span>Contact us</span>
+            <a href="mailto:partner@ruvento.com">Contact us</a>
           </div>
         </div>
         <div className={styles.socialLinks}>
