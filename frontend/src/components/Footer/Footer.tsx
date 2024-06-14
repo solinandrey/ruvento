@@ -33,9 +33,6 @@ const Footer = ({ description, haveArticles }: Props) => {
             </Link>
           ) : null}
 
-          <Link href="/team" className={styles.footerNavItem} scroll={false}>
-            Team
-          </Link>
           <div className={styles.title}>
             <a href="mailto:partner@ruvento.com">Contact us</a>
           </div>
