@@ -10,10 +10,6 @@ const headerLinks = [
     label: "Portfolio",
     link: "/portfolio",
   },
-  {
-    label: "Team",
-    link: "/team",
-  },
 ];
 
 interface IProps {
